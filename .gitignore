@@ -3,6 +3,8 @@
 !.env.example
 .course-local/
 .opencode/state/
+__pycache__/
+*.py[cod]
 student-work/**/raw/
 student-work/**/private/
 .DS_Store
