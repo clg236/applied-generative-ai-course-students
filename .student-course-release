@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T02:57:49.242Z",
+  "generatedAt": "2026-07-23T19:52:35.561Z",
   "enabledSessions": [
     "session-1"
   ],
@@ -46,10 +46,13 @@
     "scripts/validate-local-work.mjs",
     "scripts/validate-student-pr.mjs",
     "sessions/session-1-student.md",
+    "sessions/session-1/after-class.md",
+    "sessions/session-1/before-class.md",
+    "sessions/session-1/during-class.md",
     "setup/setup-guide.md",
     "slides/README.md",
     "slides/session-1/morning.md",
     "student-work/README.md",
-    "syllabus/syllabus-v2-coned-draft.md"
+    "syllabus/syllabus.md"
   ]
 }

@@ -50,15 +50,15 @@ We will treat generative AI as a **business technology**.
 | **Fri · Jul 31 · 9–12** | Multimodal AI |
 | **Tue · Aug 4 · 9–12** | Coding agents and verification |
 | **Tue · Aug 4 · 2–5** | Economics, models, and workflows |
-| **Tue · Aug 11 · 9–12** | Risk, governance, and final presentations |
+| **Tue · Aug 11 · 9–12** | Con Edison partner presentations |
 
-**KMC 2-70 · We take a ten-minute break about once an hour.**
+**Sessions 1–5: KMC 2-70 · Session 6: Con Edison HQ, 4 Irving Place · Ten-minute break about once an hour**
 
 <!-- slide -->
 
-## The main project · GenAI for New York
+## The main project · Con Edison partner capstone
 
-In teams of three or four, choose a real problem that affects quality of life in New York and build a generative-AI approach to it.
+In teams of three or four, choose a Con Edison infrastructure brief and build a tested, reviewable system.
 
 Show us:
 
@@ -67,7 +67,7 @@ Show us:
 - the important risks and limits; and
 - what you would change next.
 
-**Final class · Tue Aug 11 · Written brief · 12-minute presentation and Q&A**
+**Final class · Tue Aug 11 · 9:00 AM · Con Edison HQ · Written brief · 12-minute presentation and Q&A**
 
 <!-- slide -->
 

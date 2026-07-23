@@ -2,7 +2,7 @@
   "course": {
     "id": "course-applied-genai-2026",
     "code": "SHBI-GB 7151 B01",
-    "title": "Applied Generative AI",
+    "title": "Applied Generative AI in Business",
     "term": "Summer 2026",
     "instructor": "Christian Grewell",
     "enrollment": 26,
@@ -10,7 +10,7 @@
     "meetingAddress": "44 W 4th St · Washington Square"
   },
   "syllabus": {
-    "deck": "syllabus/syllabus-v2-coned-draft.md"
+    "deck": "syllabus/syllabus.md"
   },
   "repositoryWorkflow": {
     "studentRepository": "https://github.com/clg236/applied-generative-ai-course-students",
@@ -88,6 +88,12 @@
     }
   ],
   "announcements": [
+    {
+      "id": "announcement-4",
+      "title": "Con Edison is our course partner",
+      "body": "Con Edison will provide capstone problem briefs and host our final class on **Tuesday, August 11, from 9:00 AM–12:00 PM** at **Con Edison headquarters, 4 Irving Place**. Exact arrival, building-entry, and accessibility instructions will follow in a separate announcement.\n\nThe current problem areas are: classifying visible manhole and underground-infrastructure evidence; triaging AMI meters that are not communicating reliably; reconciling visible rooftop solar with available records; and making complex underground-network information easier for authorized people to use. Con Edison may add or refine briefs.\n\nUntil a brief explicitly says otherwise, use only public or synthetic data. Do not place customer information, precise infrastructure locations, partner-only material, or operational data in public repositories or external AI tools.",
+      "date": "Jul 23"
+    },
     {
       "id": "announcement-3",
       "title": "Welcome to Applied Generative AI — before Session 1",
@@ -364,11 +370,39 @@
       ],
       "materials": [
         {
+          "id": "before-class",
+          "label": "Before class",
+          "description": "What to complete before Session 1",
+          "kind": "guide",
+          "audience": "shared",
+          "studentSection": "before",
+          "path": "sessions/session-1/before-class.md"
+        },
+        {
+          "id": "during-class",
+          "label": "In class",
+          "description": "What to do and leave with during Session 1",
+          "kind": "guide",
+          "audience": "shared",
+          "studentSection": "during",
+          "path": "sessions/session-1/during-class.md"
+        },
+        {
+          "id": "after-class",
+          "label": "After class",
+          "description": "Follow-up work and the next deadline after Session 1",
+          "kind": "guide",
+          "audience": "shared",
+          "studentSection": "after",
+          "path": "sessions/session-1/after-class.md"
+        },
+        {
           "id": "session-guide",
           "label": "Session guide",
           "description": "Learning goals, schedule, preparation, and Session 1 outputs",
           "kind": "reference",
           "audience": "shared",
+          "studentSection": "resources",
           "path": "sessions/session-1-student.md"
         },
         {
@@ -377,6 +411,7 @@
           "description": "Claim tracing, system diagnosis, evaluation cases, operating cost, and controlled-demo worksheets",
           "kind": "reference",
           "audience": "shared",
+          "studentSection": "resources",
           "path": "materials/session-1/lecture-workbook.md"
         },
         {
@@ -385,6 +420,7 @@
           "description": "Story-first cooperative card roguelike based on a documented business-system accountability case, with one shared hand, ordered branches, one controlled change, required test coverage, computed endings, and an instructor director view",
           "kind": "game",
           "audience": "shared",
+          "studentSection": "resources",
           "path": "activities/session-1/broken-oracle.md"
         },
         {
@@ -393,6 +429,7 @@
           "description": "Connect OpenCode to released material and prepare one bounded draft pull request",
           "kind": "lab",
           "audience": "shared",
+          "studentSection": "resources",
           "path": "labs/session1-build-an-agent/GUIDE.md"
         },
         {
@@ -401,6 +438,7 @@
           "description": "Git, OpenCode, OpenRouter, DeepSeek V4 Flash, and repository preflight",
           "kind": "setup",
           "audience": "shared",
+          "studentSection": "resources",
           "path": "setup/setup-guide.md"
         },
         {
@@ -409,6 +447,7 @@
           "description": "The Switch Test assignment brief",
           "kind": "assignment",
           "audience": "shared",
+          "studentSection": "resources",
           "path": "assignments/project-1/brief.md"
         }
       ]
