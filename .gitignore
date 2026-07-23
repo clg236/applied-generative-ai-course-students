@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example
+.opencode/state/
+.DS_Store
+Thumbs.db

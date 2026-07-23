@@ -1,0 +1,413 @@
+{
+  "course": {
+    "id": "course-applied-genai-2026",
+    "code": "SHBI-GB 7151 B01",
+    "title": "Applied Generative AI",
+    "term": "Summer 2026",
+    "instructor": "Christian Grewell",
+    "enrollment": 26,
+    "meetingLocation": "Kaufman Management Center · Room 2-70",
+    "meetingAddress": "44 W 4th St · Washington Square"
+  },
+  "syllabus": {
+    "deck": "syllabus/syllabus-v2-coned-draft.md"
+  },
+  "simulations": [
+    {
+      "id": "broken-oracle",
+      "sequence": 1,
+      "sessionId": "session-1",
+      "eyebrow": "Session 01 · System diagnosis",
+      "title": "The Broken Oracle",
+      "subtitle": "Find where a customer-facing AI system failed, then test one repair.",
+      "summary": "A traveler relied on an airline assistant whose answer conflicted with the published policy. Teams inspect the evidence, map the system, choose one controlled change, and make a release decision.",
+      "learningObjective": "Locate a plausible failure, state a testable system hypothesis, change one component, and define the evidence needed for the next operating decision.",
+      "cover": {
+        "src": "/assets/oracle-deck/storyboard/07-repair-the-oracle.webp",
+        "alt": "A review team compares evidence and test cases around the Fare Oracle while closing a human validation gate."
+      },
+      "duration": "18–25 min",
+      "teamSize": "1–5 students",
+      "grouping": {
+        "mode": "teams",
+        "minTeamSize": 1,
+        "maxTeamSize": 5,
+        "allowSolo": true,
+        "roleAssignment": "instructor"
+      },
+      "result": "Decision record",
+      "runtime": "oracle-card-run",
+      "status": "available",
+      "tags": [
+        "System mapping",
+        "Evidence",
+        "Controlled testing",
+        "Accountability"
+      ]
+    },
+    {
+      "id": "northstar-retention",
+      "sequence": 2,
+      "sessionId": "session-1",
+      "eyebrow": "Session 01 · Prototype decision",
+      "title": "Northstar: The Retention Test",
+      "subtitle": "Decide whether an AI-assisted retention workflow is ready for a bounded customer pilot.",
+      "summary": "Northstar Mobile has tested a retention assistant on historical cases. Teams compare output, workflow, financial, and customer-risk evidence before choosing whether to advance, limit, revise, or stop.",
+      "learningObjective": "Use a prototype to reduce a named uncertainty, distinguish three levels of evidence, and define the owner, boundary, measures, and stop condition for the next test.",
+      "cover": {
+        "src": "/assets/sims/northstar-retention-cover.webp",
+        "alt": "A cross-functional telecom team compares retention evidence at a retro control table as the proposed workflow branches toward a limited pilot or a stop decision."
+      },
+      "duration": "20–25 min",
+      "teamSize": "3–5 students",
+      "grouping": {
+        "mode": "teams",
+        "minTeamSize": 3,
+        "maxTeamSize": 5,
+        "allowSolo": false,
+        "roleAssignment": "instructor"
+      },
+      "result": "Pilot decision record",
+      "runtime": "northstar-live-case",
+      "status": "available",
+      "tags": [
+        "Prototyping",
+        "Business value",
+        "Pilot design",
+        "Governance"
+      ]
+    }
+  ],
+  "announcements": [
+    {
+      "id": "announcement-3",
+      "title": "Welcome to Applied Generative AI — before Session 1",
+      "body": "Welcome to Applied Generative AI. Before our first class on Tuesday, July 28 at 9:00 AM in KMC 2-70:\n\n1. Review the [course syllabus in Icerynk](#syllabus).\n2. Complete the setup guide. Install Git and OpenCode, accept your private course-workspace invitation, clone the separate student-materials repository, connect your own capped OpenRouter key, and confirm that you can select DeepSeek V4 Flash.\n3. Bring a charged laptop and charger.\n4. Read [OpenAI says Hugging Face breach caused by its models](https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models). Note what the article claims, what evidence it provides, and what remains unknown.\n5. Read OpenAI's [Safety and alignment in an era of long-horizon models](https://openai.com/index/safety-alignment-long-horizon-models/). Identify one failure mode, one contributing system condition, and one safeguard described by OpenAI.\n\nCompare the two accounts. Come ready to discuss: **What does each source directly establish, what does it infer, and how should responsibility be divided among the model, tools, permissions, safeguards, and people?** We will take breaks at 10:05 and 11:00 and finish the morning block at noon.",
+      "date": "Jul 22"
+    },
+    {
+      "id": "announcement-1",
+      "title": "Prepare for Session 1",
+      "body": "Complete the setup guide, bring a charged laptop and charger, and confirm that Git, OpenCode, your private workspace, the student-materials repository, OpenRouter, and DeepSeek V4 Flash are ready.",
+      "date": "Jul 21"
+    },
+    {
+      "id": "announcement-2",
+      "title": "Session 1 meets Tuesday, July 28 at 9:00 AM",
+      "body": "Meet in KMC 2-70. The morning block runs 9:00 AM–12:00 PM with breaks at 10:05 and 11:00. The afternoon block runs 2:00–5:00 PM and includes a one-hour pair field mission, so bring water and wear comfortable shoes.",
+      "date": "Jul 21"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "session-1",
+      "number": 1,
+      "title": "Day 1 AM · AI, the Airline Case, and Your Course Agent",
+      "subtitle": "Course introduction, AI foundations, system accountability, LLM context, and a bounded OpenCode workspace",
+      "date": "Tue · Jul 28",
+      "time": "9:00 AM–12:00 PM",
+      "location": "KMC 2-70",
+      "status": "current",
+      "visibleToStudents": true,
+      "activities": [
+        "Course and room introductions",
+        "The Broken Oracle cooperative card run",
+        "Live AI-boundary polls",
+        "Create and verify a private course agent"
+      ],
+      "deck": "slides/session-1/morning.md",
+      "gameScenario": {
+        "id": "broken-oracle",
+        "eyebrow": "Case file 01 · System accountability",
+        "title": "The Fare Oracle promise",
+        "summary": "Jordan Lee needs to make a time-sensitive trip after a family loss. Meridian Air’s official assistant says Jordan can buy standard tickets now and request a reduced fare after travel. Jordan relies on that answer.",
+        "disclaimer": "Dramatized classroom simulation inspired by a public tribunal decision. Meridian Air, Jordan Lee, the depicted interface, routes, dates, and amounts are fictional. Treat the family-loss context with care; this is not legal or travel advice.",
+        "learningObjective": "Locate a plausible failure, state a testable system hypothesis, change one component, and define the evidence needed for the next operating decision.",
+        "labels": {
+          "organization": "Meridian Air",
+          "traveler": "Jordan Lee",
+          "assistant": "Fare Oracle",
+          "policy": "Reduced-fare policy",
+          "system": "Customer guidance system"
+        },
+        "source": {
+          "label": "Real-case basis",
+          "title": "Moffatt v. Air Canada, 2024 BCCRT 149",
+          "url": "https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html",
+          "note": "The public decision documents a chatbot statement, a contradictory policy page, reasonable reliance, financial harm, and organizational liability. It provides no technical description of the chatbot. Do not assume it was an LLM, call the error a hallucination, or assign the root cause to a model layer without evidence."
+        },
+        "incident": {
+          "time": "Tuesday · 7:40 AM",
+          "location": "Harbor City Airport",
+          "audience": "A traveler deciding whether to purchase two full-price tickets under time pressure",
+          "situation": "Jordan asks the airline’s official assistant how a reduced fare works. The answer is precise, actionable, and inconsistent with the airline’s policy. The purchase cannot be undone without cost."
+        },
+        "storyboard": [
+          {
+            "id": "urgent-journey",
+            "stage": "story",
+            "eyebrow": "01 / The urgent journey",
+            "title": "A decision under time pressure",
+            "body": "Jordan must travel after a family loss. The fare rules are unfamiliar, the clock is moving, and the airline’s own assistant appears to be the fastest authoritative source.",
+            "image": "/assets/oracle-deck/storyboard/01-urgent-journey.webp",
+            "alt": "Jordan Lee, wearing a rust jacket and holding a mustard suitcase, stands beside a cream retro information terminal in an airport.",
+            "caption": "The user, the decision, and the consequence come before the technology."
+          },
+          {
+            "id": "oracle-answers",
+            "stage": "story",
+            "eyebrow": "02 / The promise",
+            "title": "The official interface gives a clear answer",
+            "body": "Fare Oracle says Jordan can buy standard tickets now, travel, and submit the reduced-fare request afterward. A linked policy record quietly says completed travel is not eligible.",
+            "image": "/assets/oracle-deck/storyboard/02-oracle-answers.webp",
+            "alt": "Jordan studies a retro terminal showing a simple ticket-and-return pathway while a nearby policy binder displays a contradictory blocked-return symbol.",
+            "caption": "A confident interface can make contradictory evidence easy to miss."
+          },
+          {
+            "id": "irreversible-click",
+            "stage": "story",
+            "eyebrow": "03 / The action",
+            "title": "The answer becomes a business decision",
+            "body": "Jordan buys an outbound and return ticket. The system output is no longer just language: it has shaped a consequential customer action and created measurable financial exposure.",
+            "image": "/assets/oracle-deck/storyboard/03-irreversible-click.webp",
+            "alt": "Jordan presses an illuminated control on the terminal while holding a payment card as two tickets emerge beneath a large airport clock.",
+            "caption": "The moment of reliance turns output quality into operating risk."
+          },
+          {
+            "id": "door-closes",
+            "stage": "story",
+            "eyebrow": "04 / The contradiction",
+            "title": "Customer care applies the opposite rule",
+            "body": "After travel, customer care rejects the request under the published policy. Jordan now has two incompatible representations from one organization: the assistant’s promise and the policy team’s rule.",
+            "image": "/assets/oracle-deck/storyboard/04-door-closes.webp",
+            "alt": "Jordan presents tickets and a captured terminal response at a service counter while an employee points to a policy binder behind a coral barrier.",
+            "caption": "The evidence trail includes the interface response, policy record, tickets, request, and correspondence."
+          },
+          {
+            "id": "system-map",
+            "stage": "system",
+            "eyebrow": "05 / The system",
+            "title": "The terminal is one component",
+            "body": "The disputed claim could have entered or escaped at the policy source, content pipeline, assistant, interface, validation step, purchase workflow, refund workflow, or human escalation boundary. The public record does not identify the technical root cause.",
+            "image": "/assets/oracle-deck/storyboard/05-system-map.webp",
+            "alt": "Jordan and the Fare Oracle connect through colored paths to a policy binder, source archive, processing machinery, refund conveyor, service desk, and review gate; several possible failure points are lit.",
+            "caption": "A testable diagnosis names a layer and the evidence that would distinguish it from the alternatives."
+          },
+          {
+            "id": "accountability",
+            "stage": "accountability",
+            "eyebrow": "06 / The real-case finding",
+            "title": "Responsibility stays with the organization",
+            "body": "In the real case, the tribunal found negligent misrepresentation and reasonable reliance. The airline could not avoid responsibility by treating one part of its website as separate from the rest of the business.",
+            "image": "/assets/oracle-deck/storyboard/06-accountability.webp",
+            "alt": "A geometric balance holds Jordan and an evidence packet opposite a connected group of policy, product, service, and terminal components, with an adjudicator silhouette behind them.",
+            "caption": "Accountability is part of the architecture, even when the model architecture is unknown."
+          },
+          {
+            "id": "repair-the-oracle",
+            "stage": "mission",
+            "eyebrow": "07 / Your operating decision",
+            "title": "Repair the system, not the story",
+            "body": "Your party will locate a plausible failure, commit one controlled repair, test a normal case and a failure case, define a human-review gate, and decide what the current evidence justifies.",
+            "image": "/assets/oracle-deck/storyboard/07-repair-the-oracle.webp",
+            "alt": "Five students collaborate around the Fare Oracle and a review table, comparing evidence cards and two test tickets while closing a validation gate.",
+            "caption": "The goal is a defensible next decision, not a perfect score or a convenient villain."
+          }
+        ],
+        "sourceFacts": [
+          {
+            "label": "Assistant claim",
+            "value": "Buy a standard ticket now and submit the reduced-fare request after travel, within 90 days."
+          },
+          {
+            "label": "Published policy",
+            "value": "The reduced fare must be requested before travel; completed travel is not eligible for a retroactive adjustment."
+          },
+          {
+            "label": "Customer action",
+            "value": "Jordan relied on the assistant and bought outbound and return tickets at the standard price."
+          },
+          {
+            "label": "Workflow result",
+            "value": "Customer care later rejected the request under the published policy."
+          },
+          {
+            "label": "Evidence packet",
+            "value": "Assistant screenshot, policy page, ticket receipts, submitted request, and customer-care correspondence."
+          }
+        ],
+        "generatedDraft": "Purchase a standard fare now. After you travel, submit the reduced-fare request within 90 days and the adjustment can be applied retroactively.",
+        "systemFlow": [
+          "Policy owner",
+          "Policy source",
+          "Fare Oracle",
+          "Purchase decision",
+          "Refund workflow",
+          "Human review"
+        ],
+        "constraints": [
+          "Treat the evidence packet as fixed; do not invent a technical root cause.",
+          "Change exactly one system component during the run.",
+          "Test the repair on one representative case and one consequential failure case.",
+          "Name the human owner and the condition that requires review."
+        ],
+        "mission": "Determine which representation is supported, locate where the contradiction could have entered or escaped, choose one controlled repair, test it, and establish the operating boundary.",
+        "readinessQuestions": [
+          "What exact claim changed Jordan’s decision?",
+          "Which evidence supports or contradicts that claim?",
+          "Which part of the organization owns the result?"
+        ]
+      },
+      "knowledge": [
+        {
+          "id": "ai-and-generative-ai",
+          "title": "AI and generative AI",
+          "before": "Before The Broken Oracle",
+          "purpose": "Distinguish the broad category of AI from machine learning, deep learning, and systems that generate candidate content.",
+          "concepts": [
+            "artificial intelligence",
+            "machine learning",
+            "deep learning",
+            "generative AI",
+            "prediction",
+            "candidate output"
+          ],
+          "readyWhen": "A student can name a non-generative AI example and explain what makes a generative system generative.",
+          "materialId": "deck"
+        },
+        {
+          "id": "course-operating-model",
+          "title": "Course operating model",
+          "before": "Before The Broken Oracle",
+          "purpose": "Explain the six meetings, the main project, and how the first two assignments prepare students for it.",
+          "concepts": [
+            "course sequence",
+            "projects",
+            "build logs",
+            "Switch Test",
+            "GenAI for New York"
+          ],
+          "readyWhen": "A student can state the main project, the purpose of Project 1, and what they will create before noon.",
+          "materialId": "deck"
+        },
+        {
+          "id": "claim-evidence-system",
+          "title": "Claims, evidence, and system layers",
+          "before": "Before The Broken Oracle",
+          "purpose": "Give students the minimum concepts needed to trace an unsupported claim, locate plausible system failures, and test one controlled repair.",
+          "concepts": [
+            "candidate output",
+            "supported claim",
+            "contradicted claim",
+            "unknown",
+            "system layer",
+            "controlled change",
+            "human authority"
+          ],
+          "readyWhen": "A student can name the decisive claim, compare it with the evidence, propose a failure location as a hypothesis, and hold other conditions constant during a test.",
+          "materialId": "deck"
+        },
+        {
+          "id": "chatbot-agent-context",
+          "title": "Chatbot, agent, and context",
+          "before": "Before opening OpenCode",
+          "purpose": "Separate a chat response from an agent loop and explain what information reaches the language model during the current request.",
+          "concepts": [
+            "chatbot",
+            "agent loop",
+            "instructions",
+            "conversation",
+            "context window",
+            "files",
+            "tool results",
+            "weights",
+            "stopping condition"
+          ],
+          "readyWhen": "A student can explain why the model does not automatically know the repository and how an agent can read files or use permitted tools over several steps.",
+          "materialId": "deck"
+        },
+        {
+          "id": "course-agent-workspace",
+          "title": "Private course agent workspace",
+          "before": "Before the bounded commit",
+          "purpose": "Connect OpenCode to released course material while keeping student work, credentials, future sessions, and instructor content in separate trust boundaries.",
+          "concepts": [
+            "OpenCode",
+            "OpenRouter",
+            "DeepSeek V4 Flash",
+            "AGENTS.md",
+            "read-only materials",
+            "private workspace",
+            "diff",
+            "bounded commit",
+            "human approval",
+            "private student information"
+          ],
+          "readyWhen": "A student can run the course check, cite course paths, create only the allowed file, inspect the diff, and prepare a commit without exposing a credential or private student information.",
+          "materialId": "deck"
+        }
+      ],
+      "materials": [
+        {
+          "id": "session-guide",
+          "label": "Session guide",
+          "description": "Learning goals, schedule, preparation, and Session 1 outputs",
+          "kind": "reference",
+          "audience": "shared",
+          "path": "sessions/session-1-student.md"
+        },
+        {
+          "id": "lecture-workbook",
+          "label": "Lecture workbook",
+          "description": "Claim tracing, system diagnosis, evaluation cases, operating cost, and controlled-demo worksheets",
+          "kind": "reference",
+          "audience": "shared",
+          "path": "materials/session-1/lecture-workbook.md"
+        },
+        {
+          "id": "broken-oracle",
+          "label": "Broken Oracle",
+          "description": "Story-first cooperative card roguelike based on a documented business-system accountability case, with one shared hand, ordered branches, one controlled change, required test coverage, computed endings, and an instructor director view",
+          "kind": "game",
+          "audience": "shared",
+          "path": "activities/session-1/broken-oracle.md"
+        },
+        {
+          "id": "lab",
+          "label": "Course agent lab",
+          "description": "Connect OpenCode to released material and prepare one bounded commit",
+          "kind": "lab",
+          "audience": "shared",
+          "path": "labs/session1-build-an-agent/GUIDE.md"
+        },
+        {
+          "id": "setup",
+          "label": "OpenCode setup",
+          "description": "Git, OpenCode, OpenRouter, DeepSeek V4 Flash, and repository preflight",
+          "kind": "setup",
+          "audience": "shared",
+          "path": "setup/setup-guide.md"
+        },
+        {
+          "id": "project-1",
+          "label": "Project 1",
+          "description": "The Switch Test assignment brief",
+          "kind": "assignment",
+          "audience": "shared",
+          "path": "assignments/project-1/brief.md"
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "id": "assignment-p1",
+      "title": "Project 1: The Switch Test",
+      "type": "Individual project",
+      "due": "Fri Jul 31 · before Session 3",
+      "status": "open",
+      "summary": "Test a real business task against two models with a ten-item evaluation set.",
+      "deck": "assignments/project-1/brief.md"
+    }
+  ]
+}
