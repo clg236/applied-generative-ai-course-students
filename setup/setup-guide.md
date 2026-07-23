@@ -81,11 +81,19 @@ courses/
   applied-generative-ai-work/              # your private workspace
 ```
 
-Clone the released student materials directly, then use the private workspace URL supplied by the instructor:
+Clone the released student materials, then accept the private Course Workspace assignment:
 
 ```text
 git clone https://github.com/clg236/applied-generative-ai-course-students.git
-git clone <your-private-workspace-url> applied-generative-ai-work
+```
+
+1. Open <https://classroom.github.com/a/HCXz7pqb>.
+2. Sign in to GitHub and accept **Course Workspace**.
+3. Open the private repository GitHub creates for you and copy its HTTPS clone URL.
+4. Clone it into the required local folder:
+
+```text
+git clone <your-created-workspace-url> applied-generative-ai-work
 ```
 
 The instructor source repository is not a student repository. GitHub access to the private materials repository will be granted through the course roster.
