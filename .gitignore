@@ -1,6 +1,9 @@
 .env
 .env.*
 !.env.example
+.course-local/
 .opencode/state/
+student-work/**/raw/
+student-work/**/private/
 .DS_Store
 Thumbs.db

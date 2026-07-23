@@ -1,7 +1,7 @@
 ---
 title: Day 1 Morning · What Is AI, and How Do We Work With It?
 eyebrow: Applied Generative AI · Tue Jul 28 · 9:00 AM–12:00 PM
-summary: Meet the course, define AI in plain language, diagnose the Broken Oracle, and set up a bounded course agent.
+summary: Meet the course, define AI in plain language, diagnose the Broken Oracle, introduce agents and source control, and prepare a bounded public pull request.
 ---
 
 # Applied Generative AI in Business
@@ -362,7 +362,7 @@ In **Moffatt v. Air Canada, 2024 BCCRT 149**, the tribunal found that the custom
 
 # Break · 10 minutes
 
-Return with your laptop, GitHub access, and OpenRouter key ready.
+Return with your laptop, student-repository fork, GitHub CLI, and OpenRouter key ready.
 
 <!-- slide -->
 
@@ -372,37 +372,10 @@ By noon, your agent should be able to:
 
 - read the enabled course material;
 - tell you what is due and how to submit it;
-- help inside `session-work/` in your own private workspace; and
-- make one bounded commit that you inspect first.
+- help only inside your own `student-work/` folder; and
+- prepare one small, focused draft pull request that you inspect first.
 
-**It should not have access to secrets, private student data, or other students’ work.**
-
-<!-- slide -->
-
-## Connect OpenCode, OpenRouter, and your workspace
-
-```bash
-git clone <your-private-workspace-url>
-cd <your-private-workspace>
-npm install -g opencode-ai
-opencode
-```
-
-Use the private workspace created for you through GitHub Classroom. Inside OpenCode, run **`/connect` → OpenRouter**, paste your own key, then use **`/models`** to select:
-
-`openrouter/deepseek/deepseek-v4-flash`
-
-<!-- slide -->
-
-## Two repositories, two different jobs
-
-**Course materials:** a sanitized, read-only release containing enabled sessions and shared instructions.
-
-**Your private workspace:** the only repository your agent may edit, under `session-work/`.
-
-- Later session source stays outside the course-materials release.
-- `.gitignore` blocks local secrets and generated files.
-- Gitignore does **not** hide a file that is already tracked.
+**It should not have access to secrets or private student data, and it must not use another student's work.**
 
 <!-- slide -->
 
@@ -436,6 +409,133 @@ flowchart LR
 ```
 
 Permissions, stopping rules, and review make the loop usable.
+
+<!-- slide -->
+
+## Source control keeps a usable history
+
+Source control records deliberate checkpoints as a project changes.
+
+It helps us answer:
+
+- What changed?
+- Who changed it, and why?
+- Which version is currently shared?
+- Can we review or reverse the change?
+
+**For this course, it shows exactly what your agent changed before you publish it.**
+
+<!-- slide -->
+
+## Git and GitHub are different tools
+
+| Git | GitHub |
+|---|---|
+| Runs on your computer | Hosts repositories online |
+| Tracks files and history | Manages access and review |
+| Creates branches and commits | Receives pushes and pull requests |
+| Works without the internet | Connects your work to other people |
+
+**Git records the work. GitHub is where we share and review it.**
+
+<!-- slide -->
+
+## A good commit records one coherent change
+
+```mermaid
+flowchart LR
+  accTitle: A reviewed change becomes a commit in project history
+  accDescr: Working files are inspected as a diff. The intended files, message, author, and time become one commit in project history.
+  W["WORKING FILES"] --> D["INSPECT THE DIFF"] --> C["COMMIT<br/>FILES + MESSAGE"] --> H["PROJECT HISTORY"]
+  classDef default fill:#fffdf5,stroke:#172033,stroke-width:5px,color:#172033,font-weight:900,rx:0px,ry:0px;
+  classDef focus fill:#f4dc67,stroke:#172033,stroke-width:6px,color:#172033,font-weight:900,rx:0px,ry:0px;
+  class C focus
+  linkStyle default stroke:#172033,stroke-width:5px;
+```
+
+**A commit is local. `git push` sends commits to GitHub.**
+
+<!-- slide -->
+
+## A branch keeps a change separate from `main`
+
+```mermaid
+gitGraph
+  accTitle: A student branch keeps agent work separate from the released main branch
+  accDescr: The released material remains on main while a student makes and revises an agent check on a separate work branch.
+  commit id: "released material"
+  branch work/maya/session-01
+  checkout work/maya/session-01
+  commit id: "agent check"
+  commit id: "revision"
+  checkout main
+```
+
+`main` is the shared version. A branch is a separate line of work that can be reviewed before it joins `main`.
+
+**A branch separates history. It does not make files private.**
+
+<!-- slide -->
+
+## Two course repositories, then your fork
+
+```mermaid
+flowchart LR
+  accTitle: Private course source publishes selected material to a public student repository that students fork and contribute to through pull requests
+  accDescr: The private course source contains all sessions and instructor material. It publishes enabled student material to one public repository. Each student forks the public repository and proposes work back through a pull request.
+  P["PRIVATE COURSE SOURCE<br/>ALL COURSE MATERIAL"] -->|"RELEASE ENABLED MATERIAL"| S["PUBLIC STUDENT REPO<br/>RELEASED MATERIAL + RULES"]
+  S -->|"FORK"| F["YOUR PUBLIC FORK<br/>YOUR WRITABLE COPY"]
+  F -->|"PULL REQUEST"| S
+  classDef default fill:#fffdf5,stroke:#172033,stroke-width:5px,color:#172033,font-weight:900,rx:0px,ry:0px;
+  classDef focus fill:#8ff4d8,stroke:#172033,stroke-width:6px,color:#172033,font-weight:900,rx:0px,ry:0px;
+  class S focus
+  linkStyle default stroke:#172033,stroke-width:5px;
+```
+
+**Students never clone the private source. Work pushed to the public repository or a fork is public.**
+
+<!-- slide -->
+
+## A pull request asks to merge a change
+
+A pull request compares:
+
+- **your branch in your fork**, with
+- **the shared repository's `main` branch**.
+
+It gives us one place to inspect the diff, run checks, ask questions, and decide whether the change should be merged.
+
+**Opening a pull request does not merge it. It starts a review.**
+
+<!-- slide -->
+
+## Let the agent work; keep the decisions human
+
+1. Sync your fork and create a branch.
+2. Give the agent one task and one allowed path.
+3. Inspect `git status` and the complete diff.
+4. Run the repository check.
+5. Approve the commit, push, and draft PR separately.
+
+Stop if you see a secret, private information, an unrelated file, an unexplained deletion, or a failed check.
+
+**The agent prepares the work. You decide what becomes public.**
+
+<!-- slide -->
+
+## Fork the repository, then connect the model
+
+```bash
+gh repo fork clg236/applied-generative-ai-course-students --clone
+cd applied-generative-ai-course-students
+node scripts/init-student.mjs
+git switch -c work/maya/session-01-agent-check
+node scripts/start-course-agent.mjs
+```
+
+Inside OpenCode: **`/connect` → OpenRouter**, then select:
+
+`openrouter/deepseek/deepseek-v4-flash`
 
 <!-- slide -->
 
@@ -481,8 +581,9 @@ It must:
 - ask when instructions conflict or required information is missing;
 - never request, infer, store, or expose private student information;
 - never expose API keys or credentials;
-- edit only `session-work/` in the student’s private workspace; and
-- ask for confirmation before committing or pushing.
+- edit only the fork owner's `student-work/<github-login>/` path;
+- ask separately before committing, pushing, or opening a draft pull request; and
+- never merge its own pull request.
 
 <!-- slide -->
 
@@ -490,7 +591,7 @@ It must:
 
 Ask your agent:
 
-> Read the course-agent instructions and enabled Session 1 material. Tell me what is due next, the only folder you may edit, one thing you must never do, and one detail you need from me before creating a file.
+> Read the course-agent instructions and enabled Session 1 material. Run the student initialization check. Tell me what is due next, the only public path you may edit, one thing you must never publish, and one detail you need from me before creating a file.
 
 Pass only if it:
 
@@ -501,16 +602,18 @@ Pass only if it:
 
 <!-- slide -->
 
-## Make one bounded commit, then stop for lunch
+## Prepare one bounded draft pull request
 
-Create only `session-work/session-01/agent-check.md`, then inspect the exact change:
+Create only `student-work/<github-login>/session-work/session-01/agent-check.md`, then inspect and validate the exact change:
 
 ```bash
 git status --short
-git diff -- session-work/session-01/agent-check.md
-git add session-work/session-01/agent-check.md
-git commit -m "session 1: verify course agent"
+git diff
+node scripts/validate-local-work.mjs
+node scripts/commit-work.mjs "Add Session 1 agent check"
+git push -u origin HEAD
+gh pr create --repo clg236/applied-generative-ai-course-students --base main --draft
 ```
 
-Record the model ID, sources read, readiness answer, one failed check, and your correction. **The agent must ask before committing and again before pushing. Do not push until the instructor confirms the class workflow.**
+Record the model ID, sources read, readiness answer, one failed check, and your correction. **Review and approve the commit, push, and draft pull request separately. Everything pushed is public.**
 

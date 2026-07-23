@@ -26,7 +26,7 @@ The shared capstone goal is to **use generative AI to improve quality of life in
 
 The course includes two individual projects and one team capstone. Sessions use a common learning cycle: **experience → explain → build → observe → test → reflect**. The duration of each block changes with the work; every three-hour meeting includes two 10-minute breaks. Day 1 begins with a shared definition of AI, an airline-system simulation, and a bounded course-agent setup. The afternoon connects generative AI to business work, then sends pairs into the field to gather a small evidence packet and turn it into one testable use case.
 
-Field work uses the minimum evidence needed for the question. Students may collect structured observations, public information, photos without identifiable people, and optional non-speech audio or short process video when privacy permits. Day 1 records are reviewed before use and stored in each student's private workspace; raw media does not need to be sent to a model. Later activities may contribute permitted, de-identified records to the shared Course Field Dataset.
+Field work uses the minimum evidence needed for the question. Students may collect structured observations, public information, photos without identifiable people, and optional non-speech audio or short process video when privacy permits. Raw Day 1 records remain local and are reviewed before use. Only public-safe, de-identified manifests or derived artifacts may enter the public student repository. Later activities may contribute permitted, de-identified records to the shared Course Field Dataset.
 
 Practical requirements: bring a charged laptop and phone, a charger, comfortable shoes, and water. The Day 1 afternoon field mission remains within Washington Square and one adjacent block. Later activities define their own public-space radius, follow the same consent and safety rules, and include an indoor alternative when weather, mobility, or access makes the outdoor route unsuitable.
 
@@ -49,7 +49,7 @@ By the end of the course, you should be able to:
 
 ## Topics covered
 
-- **How the models work — and the model landscape.** Tokens, training, post-training, context, and why fluent output can still be wrong or unsupported. Open-weights and closed models, large and small models, and the practical differences among them. In Session 1, OpenCode uses a model through OpenRouter to read released course material, cite its sources, and create one bounded artifact in a private workspace.
+- **How the models work — and the model landscape.** Tokens, training, post-training, context, and why fluent output can still be wrong or unsupported. Open-weights and closed models, large and small models, and the practical differences among them. In Session 1, OpenCode uses a model through OpenRouter to read released course material, cite its sources, and create one bounded artifact in a public fork.
 - **Prompting & context engineering.** Specification, structure, examples, retrieval.
 - **Agents & harnesses.** The difference between a chatbot response and an agent that can read files, use permitted tools, update a workspace, and stop or hand work back to a person. We will examine instructions, context, memory, tools, limits, and the agent loop.
 - **Evaluation.** Building eval sets, judging outputs, knowing when a system is good enough for a real workflow.
@@ -104,7 +104,7 @@ Approval required by end of Session 5.
 
 | # | Date | Time | Lecture topic | Applied work | Partner (Con Edison) |
 |---|------|------|----------------|--------------|------------------|
-| 1 | Tue Jul 28 | 9am–12pm | Course introduction; what AI and generative AI are; chatbots, agents, LLMs, and context | Play The Broken Oracle airline SIM; answer live polls; configure OpenCode with OpenRouter; complete a bounded course-agent check and reviewed commit | Capstone goal introduced |
+| 1 | Tue Jul 28 | 9am–12pm | Course introduction; what AI and generative AI are; chatbots, agents, source control, LLMs, and context | Play The Broken Oracle airline SIM; answer live polls; fork the public repository; complete a bounded course-agent check and draft pull request | Capstone goal introduced |
 | 2 | Tue Jul 28 | 2–5pm | Generative AI in business: tasks, workflows, evidence, value, operating limits, and ownership | Work in pairs on the one-hour Field-to-Agent Sprint; return with a privacy-safe evidence packet; define one bounded use case, two tests, and a human-review condition | Field packet may seed individual Project 1 work |
 | 3 | Fri Jul 31 | 9am–12pm | Multimodal AI systems | Project 1 due; Project 2 work period | Confirmed partner or instructor briefs released |
 | 4 | Tue Aug 4 | 9am–12pm | Coding agents, specifications, and verification | Project 2 work period | — |
@@ -132,14 +132,14 @@ Build logs are short and intended to make sure you're doing work - a few sentenc
 
 Complete the Setup guide before Session 1. The Day 1 agent lab assumes that installation, authentication, and repository access already work.
 
-- **Git and GitHub:** install Git, create a GitHub account, and accept the private course-workspace invitation. Students use two repositories: a sanitized, read-only course-materials release containing only enabled sessions, and a separate private workspace for their own work.
+- **Git and GitHub:** install Git and GitHub CLI, create a GitHub account, fork the public student repository, and clone the fork. The private instructor repository contains all course source; the public repository contains only enabled student material and username-scoped contributions.
 - **OpenCode:** install [OpenCode](https://opencode.ai/docs/) and confirm that `opencode --version` works. OpenCode is the course agent interface.
 - **OpenRouter:** create an [OpenRouter](https://openrouter.ai/) account, add about $5 of credit, and make your own key with a $5 spending limit. Enter the key through OpenCode's `/connect` flow; never save it in a repository.
 - **Day 1 model:** select `openrouter/deepseek/deepseek-v4-flash`. Model catalogs change, so the instructor will announce a fallback if this entry is unavailable.
 - **Later-course tools:** one general chat model, an image-generation tool, and n8n or an equivalent workflow tool. Free tiers are acceptable unless the instructor says otherwise.
 - **Optional:** a local model runner such as [LM Studio](https://lmstudio.ai/) or Ollama for open-weights demonstrations.
 
-The course agent may read released materials but may write only inside the student's private workspace. Students review the full diff before approving a commit or push. Do not put API keys, grades, roster data, NYU IDs, attendance, accommodations, private feedback, personal messages, or identifiable recordings into OpenCode, OpenRouter, or Git.
+The course agent may read released material but may write only inside `student-work/<github-login>/` in the fork owner's public repository. Students review the full diff before separately approving a commit, push, or draft pull request. Anything pushed to GitHub is public. Do not put API keys, grades, roster data, NYU IDs, attendance, accommodations, private feedback, personal messages, learning profiles, proprietary records, or identifiable recordings into OpenCode, OpenRouter, or Git. Use Brightspace or another instructor-approved private channel when work cannot be public.
 
 If you prefer a different tool later in the course, confirm that it provides the same capability and can follow the same data and permission boundaries. Projects 1 and 2 assess whether you can compare alternatives rather than depend on a single vendor.
 

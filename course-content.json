@@ -12,6 +12,15 @@
   "syllabus": {
     "deck": "syllabus/syllabus-v2-coned-draft.md"
   },
+  "repositoryWorkflow": {
+    "studentRepository": "https://github.com/clg236/applied-generative-ai-course-students",
+    "visibility": "public",
+    "branchPattern": "work/<github-login>/<task>",
+    "sessionWorkPath": "student-work/<github-login>/session-work/",
+    "submissionPath": "student-work/<github-login>/submissions/",
+    "submissionMethod": "draft pull request to main",
+    "privateFallback": "Brightspace or another instructor-approved private channel"
+  },
   "simulations": [
     {
       "id": "broken-oracle",
@@ -82,13 +91,13 @@
     {
       "id": "announcement-3",
       "title": "Welcome to Applied Generative AI — before Session 1",
-      "body": "Welcome to Applied Generative AI. Before our first class on Tuesday, July 28 at 9:00 AM in KMC 2-70:\n\n1. Review the [course syllabus in Icerynk](#syllabus).\n2. Complete the setup guide. Install Git and OpenCode, accept your [private Course Workspace invitation](https://classroom.github.com/a/HCXz7pqb), clone the separate student-materials repository, connect your own capped OpenRouter key, and confirm that you can select DeepSeek V4 Flash.\n3. Bring a charged laptop and charger.\n4. Read [OpenAI says Hugging Face breach caused by its models](https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models). Note what the article claims, what evidence it provides, and what remains unknown.\n5. Read OpenAI's [Safety and alignment in an era of long-horizon models](https://openai.com/index/safety-alignment-long-horizon-models/). Identify one failure mode, one contributing system condition, and one safeguard described by OpenAI.\n\nCompare the two accounts. Come ready to discuss: **What does each source directly establish, what does it infer, and how should responsibility be divided among the model, tools, permissions, safeguards, and people?** We will take breaks at 10:05 and 11:00 and finish the morning block at noon.",
+      "body": "Welcome to Applied Generative AI. Before our first class on Tuesday, July 28 at 9:00 AM in KMC 2-70:\n\n1. Review the [course syllabus in Icerynk](#syllabus).\n2. Complete the setup guide. Install Git, GitHub CLI, and OpenCode; fork and clone the [public student repository](https://github.com/clg236/applied-generative-ai-course-students); run the student initialization check; connect your own capped OpenRouter key; and confirm that you can select DeepSeek V4 Flash.\n3. Bring a charged laptop and charger.\n4. Read [OpenAI says Hugging Face breach caused by its models](https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models). Note what the article claims, what evidence it provides, and what remains unknown.\n5. Read OpenAI's [Safety and alignment in an era of long-horizon models](https://openai.com/index/safety-alignment-long-horizon-models/). Identify one failure mode, one contributing system condition, and one safeguard described by OpenAI.\n\nCompare the two accounts. Come ready to discuss: **What does each source directly establish, what does it infer, and how should responsibility be divided among the model, tools, permissions, safeguards, and people?** We will take breaks at 10:05 and 11:00 and finish the morning block at noon.",
       "date": "Jul 22"
     },
     {
       "id": "announcement-1",
       "title": "Prepare for Session 1",
-      "body": "Complete the setup guide, bring a charged laptop and charger, and confirm that Git, OpenCode, your private workspace, the student-materials repository, OpenRouter, and DeepSeek V4 Flash are ready.",
+      "body": "Complete the setup guide, bring a charged laptop and charger, and confirm that Git, GitHub CLI, your public student-repository fork, OpenCode, OpenRouter, and DeepSeek V4 Flash are ready.",
       "date": "Jul 21"
     },
     {
@@ -103,7 +112,7 @@
       "id": "session-1",
       "number": 1,
       "title": "Day 1 AM · AI, the Airline Case, and Your Course Agent",
-      "subtitle": "Course introduction, AI foundations, system accountability, LLM context, and a bounded OpenCode workspace",
+      "subtitle": "Course introduction, AI foundations, system accountability, agents, source control, LLM context, and a bounded public fork",
       "date": "Tue · Jul 28",
       "time": "9:00 AM–12:00 PM",
       "location": "KMC 2-70",
@@ -113,7 +122,8 @@
         "Course and room introductions",
         "The Broken Oracle cooperative card run",
         "Live AI-boundary polls",
-        "Create and verify a private course agent"
+        "Git and GitHub basics",
+        "Create and verify a bounded course agent"
       ],
       "deck": "slides/session-1/morning.md",
       "gameScenario": {
@@ -327,23 +337,28 @@
           "materialId": "deck"
         },
         {
-          "id": "course-agent-workspace",
-          "title": "Private course agent workspace",
+          "id": "course-agent-repository",
+          "title": "Course agent and public fork",
           "before": "Before the bounded commit",
-          "purpose": "Connect OpenCode to released course material while keeping student work, credentials, future sessions, and instructor content in separate trust boundaries.",
+          "purpose": "Connect OpenCode to released course material and use source control to prepare one public, reviewable contribution without changing course files or exposing private information.",
           "concepts": [
             "OpenCode",
             "OpenRouter",
             "DeepSeek V4 Flash",
             "AGENTS.md",
-            "read-only materials",
-            "private workspace",
+            "source control",
+            "Git",
+            "GitHub",
+            "commit",
+            "branch",
+            "fork",
+            "push",
+            "pull request",
             "diff",
-            "bounded commit",
             "human approval",
-            "private student information"
+            "public student work"
           ],
-          "readyWhen": "A student can run the course check, cite course paths, create only the allowed file, inspect the diff, and prepare a commit without exposing a credential or private student information.",
+          "readyWhen": "A student can explain Git and GitHub, run the course check, create only the allowed public file, inspect the diff, and prepare a draft pull request without exposing a credential or private information.",
           "materialId": "deck"
         }
       ],
@@ -375,7 +390,7 @@
         {
           "id": "lab",
           "label": "Course agent lab",
-          "description": "Connect OpenCode to released material and prepare one bounded commit",
+          "description": "Connect OpenCode to released material and prepare one bounded draft pull request",
           "kind": "lab",
           "audience": "shared",
           "path": "labs/session1-build-an-agent/GUIDE.md"

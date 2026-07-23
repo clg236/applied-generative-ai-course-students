@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Generative AI inside deep learning, machine learning, and artificial intelligence</title>
+  <desc id="desc">Four nested circles show artificial intelligence, machine learning, deep learning, and generative AI.</desc>
+  <rect width="1600" height="900" fill="#fffdf5"/>
+  <circle cx="800" cy="450" r="350" fill="#6656d9" stroke="#172033" stroke-width="16"/>
+  <circle cx="800" cy="470" r="250" fill="#f4dc67" stroke="#172033" stroke-width="14"/>
+  <circle cx="800" cy="490" r="155" fill="#8ff4d8" stroke="#172033" stroke-width="12"/>
+  <circle cx="800" cy="510" r="88" fill="#ef2d8f" stroke="#172033" stroke-width="10"/>
+  <text x="800" y="165" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="900" letter-spacing="2">ARTIFICIAL INTELLIGENCE</text>
+  <text x="800" y="285" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900" letter-spacing="2">MACHINE LEARNING</text>
+  <text x="800" y="380" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900" letter-spacing="2">DEEP LEARNING</text>
+  <text x="800" y="497" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="900" letter-spacing="1">GENERATIVE</text>
+  <text x="800" y="528" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900" letter-spacing="2">AI</text>
+  <text x="800" y="635" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="800">produces candidate text · images · audio · video · code</text>
+</svg>

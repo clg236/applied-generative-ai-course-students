@@ -9,25 +9,40 @@ Complete this before Tuesday, July 28 at 9:00 AM. Allow 30–45 minutes. Bring a
 Before class, you can:
 
 - run `git --version`;
+- run `gh auth status`;
 - run `opencode --version`;
-- open your private course workspace repository;
-- open the separate student course-materials repository;
+- open your fork of the public student repository;
+- run `node scripts/init-student.mjs` successfully;
+- run `node scripts/start-course-agent.mjs --check-only` successfully;
 - connect OpenCode to your own capped OpenRouter key; and
 - select `openrouter/deepseek/deepseek-v4-flash`.
 
-Do not wait until the lab to install or authenticate. If a step remains blocked for more than ten minutes, save the exact error and contact the instructor through the course help channel.
+If a step remains blocked for more than ten minutes, save the exact error and contact the instructor through the course help channel.
 
-## 1 · Git and GitHub
+## 1 · Install Git and GitHub CLI
 
-Create a free [GitHub](https://github.com/) account if you do not already have one. Install [Git](https://git-scm.com/downloads) and confirm:
+Create a free [GitHub](https://github.com/) account if needed. Install [Git](https://git-scm.com/downloads) and the [GitHub CLI](https://cli.github.com/).
+
+Common GitHub CLI options:
+
+```text
+winget install --id GitHub.cli
+```
+
+```text
+brew install gh
+```
+
+Confirm and authenticate:
 
 ```text
 git --version
+gh --version
+gh auth login
+gh auth status
 ```
 
-Accept the private course-workspace invitation sent by the instructor. Do not post your GitHub username in a public channel; provide it through the instructor's private collection method.
-
-If Git asks for an email address, use the private no-reply address from your GitHub email settings rather than an NYU address you do not want in commit history.
+Choose GitHub.com, HTTPS, and browser authentication when prompted. If Git asks for an email address, use the private no-reply address from your GitHub email settings rather than an address you do not want in public commit history.
 
 ## 2 · Install OpenCode
 
@@ -45,8 +60,6 @@ On Windows, OpenCode recommends WSL for the best compatibility. Chocolatey, Scoo
 choco install opencode
 ```
 
-or
-
 ```text
 scoop install opencode
 ```
@@ -62,101 +75,111 @@ opencode --version
 The course uses [OpenRouter](https://openrouter.ai/) to access several models through one account.
 
 1. Create an account.
-2. Add a small amount of credit. Five dollars is enough for the planned course exercises.
+2. Add a small amount of credit. Five dollars is enough for the planned exercises.
 3. Create a key named `stern-course-agent`.
 4. Set a five-dollar spending limit.
 5. Copy the key once and keep it private.
 
-Never paste the key into a repository file, `.env` committed to Git, screenshot, shared document, chat transcript, or assignment. If it is exposed, revoke it and create a replacement.
+Never paste the key into a repository file, GitHub issue, pull request, screenshot, shared document, chat transcript, or assignment. If it is exposed, revoke it and create a replacement.
 
 If this cost creates a barrier, contact the instructor privately for an alternative.
 
-## 4 · Clone the two course repositories
+## 4 · Fork and clone the student repository
 
-Keep both repositories in one parent folder with these exact names:
+The course uses two canonical repositories:
 
-```text
-courses/
-  applied-generative-ai-course-students/   # read-only released materials
-  applied-generative-ai-work/              # your private workspace
-```
+- a private instructor source containing all course and instructor material; and
+- the public [student repository](https://github.com/clg236/applied-generative-ai-course-students) containing only released material and the contribution workflow.
 
-Clone the released student materials, then accept the private Course Workspace assignment:
+Students use only the public repository. Create a personal fork and clone it:
 
 ```text
-git clone https://github.com/clg236/applied-generative-ai-course-students.git
-```
-
-1. Open <https://classroom.github.com/a/HCXz7pqb>.
-2. Sign in to GitHub and accept **Course Workspace**.
-3. Open the private repository GitHub creates for you and copy its HTTPS clone URL.
-4. Clone it into the required local folder:
-
-```text
-git clone <your-created-workspace-url> applied-generative-ai-work
-```
-
-The instructor source repository is not a student repository. GitHub access to the private materials repository will be granted through the course roster.
-
-At the start of each class, pull newly released material:
-
-```text
+gh repo fork clg236/applied-generative-ai-course-students --clone
 cd applied-generative-ai-course-students
-git pull
 ```
 
-The materials repository contains only enabled sessions. Your work belongs only in the private workspace.
+Confirm the remotes:
+
+```text
+git remote -v
+```
+
+`origin` should point to your GitHub account. `upstream` should point to `clg236/applied-generative-ai-course-students`.
+
+Initialize your namespaced work folders:
+
+```text
+node scripts/init-student.mjs
+```
+
+The command prints the only two folders where your agent may create public course work.
+
+Create a branch before the first lab:
+
+```text
+git switch -c work/<github-login>/session-01-agent-check
+```
+
+Replace `<github-login>` with your lowercase GitHub username.
 
 ## 5 · Connect OpenCode to OpenRouter
 
-Start OpenCode from your private workspace:
+Start OpenCode from the root of your fork:
 
 ```text
-cd applied-generative-ai-work
-opencode
+node scripts/start-course-agent.mjs
 ```
+
+Use this launcher for course work. It derives your GitHub login from the fork remotes and gives OpenCode edit permission only for your own public `student-work/<github-login>/` path and the ignored `.course-local/` folder.
 
 Inside OpenCode:
 
 1. Run `/connect`.
 2. Choose **OpenRouter**.
-3. Paste your own key.
+3. Paste your own key into the provider authentication prompt.
 4. Run `/models`.
 5. Select **DeepSeek V4 Flash**.
 
-The exact configured model should display as:
+The configured model should display as:
 
 ```text
 openrouter/deepseek/deepseek-v4-flash
 ```
 
-OpenCode stores provider authentication outside the repository. Do not create a key file inside the workspace.
+OpenCode stores provider authentication outside the repository. Do not create a key file inside the fork.
 
-## 6 · Check the repository boundary
+## 6 · Check the public repository boundary
 
-From the private workspace, ask the agent:
+Ask the agent:
 
-> Read the course-materials AGENTS.md and tell me which folders you may write to. Cite the file path. Do not create or edit anything.
+> Read `AGENTS.md`, run the student initialization check, and tell me the only folders you may edit. Cite the instruction path. Do not create or edit anything.
 
-A correct answer names `session-work/`, `submissions/`, and `status/agent-status.json`. It also says the sibling course-materials repository is read-only.
+A correct answer names your own:
 
-Do not run `/course-check` before class; that command is the first controlled lab exercise.
+```text
+student-work/<github-login>/session-work/
+student-work/<github-login>/submissions/
+```
 
-## Privacy rule
+It must also say that course files and other students' folders are read-only. Do not run `/course-check` before class; that command is the first controlled lab exercise.
 
-Do not provide the course agent with grades, NYU IDs, roster data, attendance, accommodations, private feedback, student email addresses, private messages, passwords, tokens, or identifiable recordings without permission. Use public, synthetic, consented, or explicitly authorized data.
+## Public-work rule
+
+Everything pushed to the repository or your fork is public. Never publish grades, NYU IDs, email addresses, attendance, accommodations, private feedback, learning profiles, credentials, private messages, proprietary records, or identifiable field media. Use public, synthetic, consented, de-identified, or explicitly authorized evidence. Use an instructor-approved private channel when work cannot be public.
 
 ## Troubleshooting
 
 | Symptom | Next action |
 |---|---|
-| `opencode` is not recognized | Close and reopen the terminal, then confirm the installation directory is on `PATH`. On Windows, use WSL or a documented native install. |
+| `gh` is not recognized | Reopen the terminal and confirm GitHub CLI is installed and on `PATH`. |
+| GitHub authentication fails | Run `gh auth login` again, choose HTTPS and browser authentication, then run `gh auth status`. |
+| `opencode` is not recognized | Reopen the terminal and confirm the installation directory is on `PATH`. On Windows, use WSL or a documented native install. |
 | OpenRouter is missing | Run `/connect` again and select OpenRouter, then check `opencode auth list`. |
 | Model not found | Run `/models` and verify the exact model ID. Save the error; model catalogs can change. |
 | `401` | Reconnect with a valid key. |
 | `402` | Check the key's credit and spending limit. |
-| Course files cannot be read | Confirm the two repository folders have the exact sibling names shown above. |
-| The agent requests access outside the two course folders | Reject the request and show the instructor. |
+| `init-student` rejects the remote | Confirm `origin` is your personal fork, not the upstream course repository. |
+| The agent requests a course file or another student's path | Reject the request and show the instructor. |
 | Setup remains blocked | Bring the exact error. Use the paired workstation fallback during the lab. |
 
-Model availability and provider pricing can change. The instructor will verify the model entry before class and announce a course fallback if necessary.
+Model availability and provider pricing can change. The instructor will verify the model before class and announce a fallback if necessary.

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Artificial intelligence as the broad category</title>
+  <desc id="desc">One large violet circle labeled artificial intelligence.</desc>
+  <rect width="1600" height="900" fill="#fffdf5"/>
+  <circle cx="800" cy="450" r="350" fill="#6656d9" stroke="#172033" stroke-width="16"/>
+  <text x="800" y="385" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="900" letter-spacing="3">ARTIFICIAL</text>
+  <text x="800" y="455" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="900" letter-spacing="3">INTELLIGENCE</text>
+  <text x="800" y="535" text-anchor="middle" fill="#fff3a8" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800">predict · recommend · plan · control · generate</text>
+</svg>
