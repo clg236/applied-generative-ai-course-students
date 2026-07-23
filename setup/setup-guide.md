@@ -81,7 +81,14 @@ courses/
   applied-generative-ai-work/              # your private workspace
 ```
 
-Use the student-materials URL and private workspace URL supplied by the instructor. The instructor source repository is not a student repository.
+Clone the released student materials directly, then use the private workspace URL supplied by the instructor:
+
+```text
+git clone https://github.com/clg236/applied-generative-ai-course-students.git
+git clone <your-private-workspace-url> applied-generative-ai-work
+```
+
+The instructor source repository is not a student repository. GitHub access to the private materials repository will be granted through the course roster.
 
 At the start of each class, pull newly released material:
 
