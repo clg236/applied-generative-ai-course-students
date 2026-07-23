@@ -87,4 +87,3 @@ Before noon, have either:
 - a short local blocker record containing the exact setup error and next recovery step.
 
 Bring the working fork back for the afternoon Field-to-Agent Sprint.
-
