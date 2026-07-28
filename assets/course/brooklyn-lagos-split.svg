@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 520" role="img"
+     aria-labelledby="bl-title bl-desc">
+  <title id="bl-title">The same card used in Brooklyn and Lagos seventeen minutes apart</title>
+  <desc id="bl-desc">A schematic Atlantic map. A pin over New York is labelled Brooklyn, 9:14 AM. A pin over West Africa is labelled Lagos, 9:31 AM. An arc joins them, marked seventeen minutes and about 5,200 miles.</desc>
+
+  <rect width="620" height="520" fill="#fffdf5"/>
+  <rect x="3" y="3" width="614" height="514" fill="none" stroke="#172033" stroke-width="6"/>
+
+  <!-- Ocean field. Deliberately schematic: this is a diagram of a distance, not
+       a cartographic claim, so the coastlines are simplified silhouettes. -->
+  <rect x="24" y="92" width="572" height="330" fill="#eaf4ff" stroke="#172033" stroke-width="3"/>
+
+  <!-- Latitude/longitude ticks, to read as a map rather than an illustration -->
+  <g stroke="#b9cfe4" stroke-width="1.5">
+    <line x1="24" y1="180" x2="596" y2="180"/>
+    <line x1="24" y1="257" x2="596" y2="257"/>
+    <line x1="24" y1="334" x2="596" y2="334"/>
+    <line x1="167" y1="92" x2="167" y2="422"/>
+    <line x1="310" y1="92" x2="310" y2="422"/>
+    <line x1="453" y1="92" x2="453" y2="422"/>
+  </g>
+
+  <!-- North and South America, simplified -->
+  <path d="M24 128 L96 112 L142 140 L128 186 L150 214 L128 246 L96 232 L74 258
+           L92 300 L120 330 L104 372 L70 396 L24 384 Z"
+        fill="#d8e8d2" stroke="#172033" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Europe and Africa, simplified -->
+  <path d="M404 104 L470 96 L528 116 L560 106 L596 122 L596 214 L566 250
+           L556 316 L520 372 L470 404 L432 386 L424 330 L444 286 L432 232
+           L406 196 L396 150 Z"
+        fill="#d8e8d2" stroke="#172033" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- The flight that never happened -->
+  <path d="M132 214 Q310 118 470 300" fill="none" stroke="#172033"
+        stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/>
+
+  <!-- Brooklyn -->
+  <g>
+    <circle cx="132" cy="214" r="13" fill="#ffe568" stroke="#172033" stroke-width="4"/>
+    <circle cx="132" cy="214" r="4" fill="#172033"/>
+    <rect x="36" y="132" width="176" height="58" fill="#ffffff" stroke="#172033" stroke-width="4"/>
+    <text x="50" y="156" font-family="Bahnschrift, 'Franklin Gothic Medium', Arial, sans-serif"
+          font-size="17" font-weight="900" fill="#172033">BROOKLYN</text>
+    <text x="50" y="180" font-family="Bahnschrift, 'Franklin Gothic Medium', Arial, sans-serif"
+          font-size="21" font-weight="900" fill="#172033">9:14 AM</text>
+  </g>
+
+  <!-- Lagos -->
+  <g>
+    <circle cx="470" cy="300" r="13" fill="#8ff4d8" stroke="#172033" stroke-width="4"/>
+    <circle cx="470" cy="300" r="4" fill="#172033"/>
+    <rect x="408" y="322" width="176" height="58" fill="#ffffff" stroke="#172033" stroke-width="4"/>
+    <text x="422" y="346" font-family="Bahnschrift, 'Franklin Gothic Medium', Arial, sans-serif"
+          font-size="17" font-weight="900" fill="#172033">LAGOS</text>
+    <text x="422" y="370" font-family="Bahnschrift, 'Franklin Gothic Medium', Arial, sans-serif"
+          font-size="21" font-weight="900" fill="#172033">9:31 AM</text>
+  </g>
+
+  <!-- The gap that makes it impossible -->
+  <rect x="24" y="440" width="572" height="56" fill="#ffe568" stroke="#172033" stroke-width="4"/>
+  <text x="310" y="466" text-anchor="middle"
+        font-family="Bahnschrift, 'Franklin Gothic Medium', Arial, sans-serif"
+        font-size="22" font-weight="900" fill="#172033">17 MINUTES APART</text>
+  <text x="310" y="486" text-anchor="middle"
+        font-family="Bahnschrift, 'Franklin Gothic Medium', Arial, sans-serif"
+        font-size="15" font-weight="700" fill="#172033">about 5,200 miles · no flight is that fast</text>
+</svg>

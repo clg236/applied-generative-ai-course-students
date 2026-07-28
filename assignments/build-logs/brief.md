@@ -1,30 +1,22 @@
 ---
-title: Six Build Logs
+title: Build Logs
 eyebrow: Reflection series · Shared brief
-summary: A short, honest record of what you tried, learned, and will change.
+summary: "Twenty minutes at the end of each teaching day: what you tried, what surprised you, and what you will change."
 ---
 
-# Build logs
-
-Submit a short entry after every session. This is evidence of process, not a polished essay.
-
-<!-- slide -->
+# Logs
+I'd like us to use time at the end of each session to reflect. Simple questions, these are ungraded (do them = get credit).
 
 ## Three prompts
 
-1. What did you try?
+1. What did you try today?
 2. What surprised you or failed?
 3. What will you do differently next?
 
-<!-- slide -->
-
 ## Include your AI use
 
-Name the tools and models, the important prompts, where the output helped, and where your judgment changed or rejected it.
-
-<!-- slide -->
+Name the generative AI tools and models, the important prompts, where the output helped, and where your judgment changed or rejected it (or was it just so absolutely PERFECT that you didn't need to do anything at all?!)
 
 ## Keep it small and real
 
-A few specific sentences with one work link are enough. Specific evidence matters more than writing polish.
-
+A few specific sentences with one work link are enough. Specific evidence matters more than writing polish, please DO NOT just copy-paste AI output, unless you truly agree 100% with the tokens ;)

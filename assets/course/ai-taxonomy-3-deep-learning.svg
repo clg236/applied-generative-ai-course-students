@@ -1,13 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Deep learning inside machine learning</title>
-  <desc id="desc">A mint deep-learning circle nested inside machine learning and artificial intelligence.</desc>
+  <title id="title">Deep learning learns useful internal representations</title>
+  <desc id="desc">A full-slide diagram showing raw signals passing through a layered neural network into useful numerical representations and a task output, nested within machine learning and artificial intelligence.</desc>
   <rect width="1600" height="900" fill="#fffdf5"/>
-  <circle cx="800" cy="450" r="350" fill="#6656d9" stroke="#172033" stroke-width="16"/>
-  <circle cx="800" cy="470" r="250" fill="#f4dc67" stroke="#172033" stroke-width="14"/>
-  <circle cx="800" cy="490" r="155" fill="#8ff4d8" stroke="#172033" stroke-width="12"/>
-  <text x="800" y="165" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="900" letter-spacing="2">ARTIFICIAL INTELLIGENCE</text>
-  <text x="800" y="285" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900" letter-spacing="2">MACHINE LEARNING</text>
-  <text x="800" y="475" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="2">DEEP</text>
-  <text x="800" y="520" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="2">LEARNING</text>
-  <text x="800" y="570" text-anchor="middle" fill="#174b45" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800">learns layered representations</text>
+  <rect x="10" y="10" width="1580" height="880" fill="none" stroke="#172033" stroke-width="12"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172033">
+    <text x="64" y="72" fill="#6656d9" font-size="22" font-weight="900" letter-spacing="3">WHAT IS AI? / 04</text>
+    <text x="64" y="154" font-size="66" font-weight="900" letter-spacing="-2">DEEP LEARNING</text>
+    <text x="68" y="203" font-size="29" font-weight="700">Layered neural networks learn numerical features useful for a task.</text>
+
+    <rect x="64" y="246" width="1472" height="512" fill="#eeeaff" stroke="#172033" stroke-width="8"/>
+    <text x="92" y="284" fill="#6656d9" font-size="16" font-weight="900" letter-spacing="2">ARTIFICIAL INTELLIGENCE</text>
+    <rect x="92" y="306" width="1416" height="422" fill="#8ff4d8" stroke="#172033" stroke-width="7"/>
+    <text x="120" y="344" font-size="16" font-weight="900" letter-spacing="2">MACHINE LEARNING</text>
+    <rect x="120" y="366" width="1360" height="332" fill="#fffdf5" stroke="#172033" stroke-width="6"/>
+    <text x="148" y="405" fill="#ef2d8f" font-size="18" font-weight="900" letter-spacing="2">DEEP LEARNING</text>
+
+    <rect x="158" y="454" width="236" height="132" fill="#f4dc67" stroke="#172033" stroke-width="5"/>
+    <rect x="502" y="454" width="236" height="132" fill="#6656d9" stroke="#172033" stroke-width="5"/>
+    <rect x="846" y="454" width="236" height="132" fill="#ef2d8f" stroke="#172033" stroke-width="5"/>
+    <rect x="1190" y="454" width="236" height="132" fill="#fffdf5" stroke="#172033" stroke-width="5"/>
+
+    <text x="276" y="502" text-anchor="middle" font-size="21" font-weight="900">RAW SIGNALS</text>
+    <text x="276" y="536" text-anchor="middle" font-size="19" font-weight="750">PIXELS / AUDIO</text>
+    <text x="276" y="564" text-anchor="middle" font-size="19" font-weight="750">TOKENS / SENSORS</text>
+
+    <text x="620" y="502" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="900">LAYERED</text>
+    <text x="620" y="536" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="900">NEURAL</text>
+    <text x="620" y="564" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="900">NETWORK</text>
+
+    <text x="964" y="502" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900">LEARNED</text>
+    <text x="964" y="536" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900">NUMERICAL</text>
+    <text x="964" y="564" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900">REPRESENTATIONS</text>
+
+    <text x="1308" y="502" text-anchor="middle" font-size="21" font-weight="900">TASK OUTPUT</text>
+    <text x="1308" y="536" text-anchor="middle" font-size="19" font-weight="750">CLASSIFY / FIND</text>
+    <text x="1308" y="564" text-anchor="middle" font-size="19" font-weight="750">PREDICT / GENERATE</text>
+
+    <path d="M404 520 H490" fill="none" stroke="#172033" stroke-width="9"/>
+    <path d="M480 506 L498 520 L480 534" fill="none" stroke="#172033" stroke-width="9"/>
+    <path d="M748 520 H834" fill="none" stroke="#172033" stroke-width="9"/>
+    <path d="M824 506 L842 520 L824 534" fill="none" stroke="#172033" stroke-width="9"/>
+    <path d="M1092 520 H1178" fill="none" stroke="#172033" stroke-width="9"/>
+    <path d="M1168 506 L1186 520 L1168 534" fill="none" stroke="#172033" stroke-width="9"/>
+
+    <text x="148" y="650" font-size="23" font-weight="750">The useful features vary by model, data, and task; there is no single universal layer story.</text>
+
+    <rect x="64" y="788" width="1472" height="48" fill="#172033"/>
+    <text x="800" y="821" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900">THE SYSTEM LEARNS FEATURES. PEOPLE STILL SET THE TASK, DATA, OBJECTIVE, AND TEST.</text>
+  </g>
 </svg>

@@ -2,6 +2,8 @@
 
 Student work enters this repository through a pull request from a personal fork. A pull request is public and must contain only material that is safe to publish.
 
+**This workflow starts at Session 4 (Tue Aug 4) and applies from Project 2 onward.** Week 1 runs in a browser on a free OpenRouter account, and **Project 1 is presented in class in pairs, with its evidence uploaded to Brightspace as one PDF or one zip** — do not open a pull request for it.
+
 ## 1. Sync and branch
 
 Keep `main` aligned with the upstream course release. Do all work on a branch:

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Rules and learning are two different ways to build AI systems</title>
+  <desc id="desc">A side-by-side comparison of a rule-based expense policy system and a machine-learning fraud risk system, followed by the human decisions both require.</desc>
+  <rect width="1600" height="900" fill="#fffdf5"/>
+  <rect x="10" y="10" width="1580" height="880" fill="none" stroke="#172033" stroke-width="12"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172033">
+    <text x="64" y="72" fill="#6656d9" font-size="22" font-weight="900" letter-spacing="3">WHAT IS AI? / 02</text>
+    <text x="64" y="154" font-size="66" font-weight="900" letter-spacing="-2">TWO WAYS TO BUILD AI</text>
+    <text x="68" y="203" font-size="29" font-weight="700">Rules apply logic people write. Learning fits patterns from examples.</text>
+
+    <rect x="64" y="250" width="706" height="432" fill="#f4dc67" stroke="#172033" stroke-width="8"/>
+    <text x="96" y="304" font-size="20" font-weight="900" letter-spacing="2">APPROACH 1</text>
+    <text x="96" y="361" font-size="47" font-weight="900">RULE-BASED SYSTEM</text>
+    <text x="96" y="407" font-size="25" font-weight="750">People specify the logic.</text>
+
+    <rect x="96" y="460" width="168" height="94" fill="#fffdf5" stroke="#172033" stroke-width="5"/>
+    <rect x="326" y="460" width="180" height="94" fill="#fffdf5" stroke="#172033" stroke-width="5"/>
+    <rect x="568" y="460" width="168" height="94" fill="#fffdf5" stroke="#172033" stroke-width="5"/>
+    <text x="180" y="500" text-anchor="middle" font-size="18" font-weight="900">EXPENSE</text>
+    <text x="180" y="526" text-anchor="middle" font-size="18" font-weight="900">CLAIM</text>
+    <text x="416" y="500" text-anchor="middle" font-size="18" font-weight="900">POLICY</text>
+    <text x="416" y="526" text-anchor="middle" font-size="18" font-weight="900">RULES</text>
+    <text x="652" y="500" text-anchor="middle" font-size="18" font-weight="900">APPROVE /</text>
+    <text x="652" y="526" text-anchor="middle" font-size="18" font-weight="900">REVIEW</text>
+    <path d="M270 507 H318" fill="none" stroke="#172033" stroke-width="8"/>
+    <path d="M308 495 L324 507 L308 519" fill="none" stroke="#172033" stroke-width="8"/>
+    <path d="M512 507 H560" fill="none" stroke="#172033" stroke-width="8"/>
+    <path d="M550 495 L566 507 L550 519" fill="none" stroke="#172033" stroke-width="8"/>
+    <text x="96" y="626" font-size="23" font-weight="700">Best when rules are stable, explicit, and auditable.</text>
+
+    <rect x="830" y="250" width="706" height="432" fill="#8ff4d8" stroke="#172033" stroke-width="8"/>
+    <text x="862" y="304" font-size="20" font-weight="900" letter-spacing="2">APPROACH 2</text>
+    <text x="862" y="361" font-size="47" font-weight="900">LEARNING SYSTEM</text>
+    <text x="862" y="407" font-size="25" font-weight="750">A model fits patterns from examples.</text>
+
+    <rect x="862" y="460" width="168" height="94" fill="#fffdf5" stroke="#172033" stroke-width="5"/>
+    <rect x="1092" y="460" width="180" height="94" fill="#fffdf5" stroke="#172033" stroke-width="5"/>
+    <rect x="1334" y="460" width="168" height="94" fill="#fffdf5" stroke="#172033" stroke-width="5"/>
+    <text x="946" y="500" text-anchor="middle" font-size="18" font-weight="900">PAST</text>
+    <text x="946" y="526" text-anchor="middle" font-size="18" font-weight="900">CASES</text>
+    <text x="1182" y="500" text-anchor="middle" font-size="18" font-weight="900">TRAINED</text>
+    <text x="1182" y="526" text-anchor="middle" font-size="18" font-weight="900">MODEL</text>
+    <text x="1418" y="500" text-anchor="middle" font-size="18" font-weight="900">RISK</text>
+    <text x="1418" y="526" text-anchor="middle" font-size="18" font-weight="900">SCORE</text>
+    <path d="M1036 507 H1084" fill="none" stroke="#172033" stroke-width="8"/>
+    <path d="M1074 495 L1090 507 L1074 519" fill="none" stroke="#172033" stroke-width="8"/>
+    <path d="M1278 507 H1326" fill="none" stroke="#172033" stroke-width="8"/>
+    <path d="M1316 495 L1332 507 L1316 519" fill="none" stroke="#172033" stroke-width="8"/>
+    <text x="862" y="626" font-size="23" font-weight="700">Useful when patterns are hard to write as rules.</text>
+
+    <rect x="64" y="728" width="1472" height="108" fill="#172033"/>
+    <text x="96" y="774" fill="#f4dc67" font-size="20" font-weight="900" letter-spacing="2">BOTH STILL REQUIRE PEOPLE TO CHOOSE</text>
+    <text x="96" y="814" fill="#ffffff" font-size="26" font-weight="750">THE TASK  /  THE INPUTS  /  THE OBJECTIVE  /  THE LIMITS  /  HOW SUCCESS IS TESTED</text>
+  </g>
+</svg>

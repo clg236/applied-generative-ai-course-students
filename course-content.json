@@ -18,76 +18,51 @@
     "branchPattern": "work/<github-login>/<task>",
     "sessionWorkPath": "student-work/<github-login>/session-work/",
     "submissionPath": "student-work/<github-login>/submissions/",
-    "submissionMethod": "draft pull request to main",
+    "submissionMethod": "draft pull request to main, from Project 2 onward. Project 1 is a pair presentation in class, with its evidence uploaded to Brightspace as one PDF or one zip",
+    "taughtIn": "Session 4 · Tue Aug 4. Week 1 needs only a browser and a free OpenRouter account — no fork, clone, terminal, or API key",
     "privateFallback": "Brightspace or another instructor-approved private channel"
   },
   "simulations": [
     {
-      "id": "broken-oracle",
-      "sequence": 1,
+      "id": "turing-desk",
+      "sequence": 3,
       "sessionId": "session-1",
-      "eyebrow": "Session 01 · System diagnosis",
-      "title": "The Broken Oracle",
-      "subtitle": "Find where a customer-facing AI system failed, then test one repair.",
-      "summary": "A traveler relied on an airline assistant whose answer conflicted with the published policy. Teams inspect the evidence, map the system, choose one controlled change, and make a release decision.",
-      "learningObjective": "Locate a plausible failure, state a testable system hypothesis, change one component, and define the evidence needed for the next operating decision.",
+      "eyebrow": "Session 01 · Live desk",
+      "title": "The Turing Desk",
+      "subtitle": "You are a customer with a refund problem. Someone answers. Was it a person?",
+      "summary": "Every student takes a refund question to Fare Oracle support. Some are answered by a classmate working from the real policy; the rest by the model. Nobody is told which. Play both sides, then call it.",
+      "learningObjective": "Notice an unsupported promise in a customer answer, and explain why a grounded system and a tempted person fail in the same direction.",
       "cover": {
         "src": "/assets/oracle-deck/storyboard/07-repair-the-oracle.webp",
         "alt": "A review team compares evidence and test cases around the Fare Oracle while closing a human validation gate."
       },
-      "duration": "18–25 min",
-      "teamSize": "1–5 students",
+      "duration": "15–20 min",
+      "teamSize": "Whole class",
       "grouping": {
-        "mode": "teams",
+        "mode": "individual",
         "minTeamSize": 1,
-        "maxTeamSize": 5,
+        "maxTeamSize": 1,
         "allowSolo": true,
         "roleAssignment": "instructor"
       },
-      "result": "Decision record",
-      "runtime": "oracle-card-run",
+      "result": "A call, and a reason",
+      "runtime": "turing-desk",
       "status": "available",
       "tags": [
-        "System mapping",
-        "Evidence",
-        "Controlled testing",
-        "Accountability"
-      ]
-    },
-    {
-      "id": "northstar-retention",
-      "sequence": 2,
-      "sessionId": "session-1",
-      "eyebrow": "Session 01 · Prototype decision",
-      "title": "Northstar: The Retention Test",
-      "subtitle": "Decide whether an AI-assisted retention workflow is ready for a bounded customer pilot.",
-      "summary": "Northstar Mobile has tested a retention assistant on historical cases. Teams compare output, workflow, financial, and customer-risk evidence before choosing whether to advance, limit, revise, or stop.",
-      "learningObjective": "Use a prototype to reduce a named uncertainty, distinguish three levels of evidence, and define the owner, boundary, measures, and stop condition for the next test.",
-      "cover": {
-        "src": "/assets/sims/northstar-retention-cover.webp",
-        "alt": "A cross-functional telecom team compares retention evidence at a retro control table as the proposed workflow branches toward a limited pilot or a stop decision."
-      },
-      "duration": "20–25 min",
-      "teamSize": "3–5 students",
-      "grouping": {
-        "mode": "teams",
-        "minTeamSize": 3,
-        "maxTeamSize": 5,
-        "allowSolo": false,
-        "roleAssignment": "instructor"
-      },
-      "result": "Pilot decision record",
-      "runtime": "northstar-live-case",
-      "status": "available",
-      "tags": [
-        "Prototyping",
-        "Business value",
-        "Pilot design",
-        "Governance"
+        "Grounding",
+        "Judgment",
+        "Customer harm",
+        "Incentives"
       ]
     }
   ],
   "announcements": [
+    {
+      "id": "announcement-5",
+      "title": "Before Session 3 · Project 1 and the open-weights debate",
+      "body": "Session 3 on Friday, July 31 opens with the Project 1 pair presentations and a short discussion about model access, safety, and China policy.\n\nBefore Friday:\n\n1. Upload your Project 1 evidence to Brightspace before class and be ready for the three-minute pair presentation.\n2. Read Axios's [OpenAI says Hugging Face breach caused by its models](https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models) and separate the reported event, OpenAI's attribution, and any causal inference.\n3. Read OpenAI's [Safety and alignment in an era of long-horizon models](https://openai.com/index/safety-alignment-long-horizon-models/) and identify which safeguards depend on the model provider retaining control. This article describes separate internal cases; it is not a technical report on the Hugging Face incident.\n4. Read Anthropic's [Our position on open-weights models](https://www.anthropic.com/news/position-open-weights-models) and identify the policy lever you find strongest and the claim that most needs evidence.\n\nBring a short note answering two questions: **Which safety controls still work after weights can be downloaded and modified? Is open versus closed the right policy boundary for the China risk Anthropic describes?** Be ready to say what evidence would change your position.",
+      "date": "Jul 28"
+    },
     {
       "id": "announcement-4",
       "title": "Con Edison is our course partner",
@@ -97,28 +72,16 @@
     {
       "id": "announcement-3",
       "title": "Welcome to Applied Generative AI — before Session 1",
-      "body": "Welcome to Applied Generative AI. Before our first class on Tuesday, July 28 at 9:00 AM in KMC 2-70:\n\n1. Review the [course syllabus in Icerynk](#syllabus).\n2. Complete the setup guide. Install Git, GitHub CLI, and OpenCode; fork and clone the [public student repository](https://github.com/clg236/applied-generative-ai-course-students); run the student initialization check; connect your own capped OpenRouter key; and confirm that you can select DeepSeek V4 Flash.\n3. Bring a charged laptop and charger.\n4. Read [OpenAI says Hugging Face breach caused by its models](https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models). Note what the article claims, what evidence it provides, and what remains unknown.\n5. Read OpenAI's [Safety and alignment in an era of long-horizon models](https://openai.com/index/safety-alignment-long-horizon-models/). Identify one failure mode, one contributing system condition, and one safeguard described by OpenAI.\n\nCompare the two accounts. Come ready to discuss: **What does each source directly establish, what does it infer, and how should responsibility be divided among the model, tools, permissions, safeguards, and people?** We will take breaks at 10:05 and 11:00 and finish the morning block at noon.",
+      "body": "Welcome to Applied Generative AI. Before our first class on Tuesday, July 28 at 9:00 AM in KMC 2-70:\n\n1. Open [the Icerynk class workspace](https://www.icerynk.com), choose **Continue with Google**, and sign in with your **@nyu.edu** or **@stern.nyu.edu** account — personal Gmail accounts are not accepted. Confirm that you can open **Sessions → Session 1**. If you cannot get in, email clg236@nyu.edu tonight rather than waiting until the morning.\n2. Review the [course syllabus in Icerynk](#syllabus).\n3. Create a **free account at [openrouter.ai](https://openrouter.ai/)**. That is the only tool setup for week 1. A free account is enough for everything we do this week and for Project 1: **no credit card, no install, no API key.** If a page asks you for payment details, you have gone somewhere we do not need — back out. If you cannot get it done before Tuesday, that is fine; we make the account over lunch on Day 1.\n4. **Install nothing else.** Week 1 runs entirely in a browser. The terminal, Git, GitHub, and coding-agent toolchain is taught in **Session 4 on Tuesday, August 4 at 9:00 AM**, and install instructions go out the weekend before. Please do not work ahead on it.\n5. Bring a charged laptop and charger.\n\nThe morning block runs 9:00 AM–12:00 PM with two ten-minute breaks. Lunch is 12:00–2:00 PM. The afternoon block runs 2:00–5:00 PM and includes a forty-five-minute pair field mission outdoors, including the walk back to class, so bring water, wear comfortable shoes, and have your phone with you.\n\n**Project 1 starts in that field mission, and you do it in pairs.** You and your partner explore the built environment around NYU and start with one task a person is already trying to do. Try the current process yourselves, collect a compact evidence packet, and frame a test that could show where AI helps, where it does not, or whether the non-AI alternative is better. Come back with evidence and a question another pair can challenge; you are collecting the start of your own assignment, and you are finding the person you will present it with.\n\n**You present it as a pair in three minutes at the start of Session 3 on Friday, July 31** — both of you speaking. Use OpenRouter or another web playground; the supporting evidence goes to **Brightspace** as one PDF or one zip before class — not a repository. Nothing in week 1 requires you to spend money.",
       "date": "Jul 22"
-    },
-    {
-      "id": "announcement-1",
-      "title": "Prepare for Session 1",
-      "body": "Complete the setup guide, bring a charged laptop and charger, and confirm that Git, GitHub CLI, your public student-repository fork, OpenCode, OpenRouter, and DeepSeek V4 Flash are ready.",
-      "date": "Jul 21"
-    },
-    {
-      "id": "announcement-2",
-      "title": "Session 1 meets Tuesday, July 28 at 9:00 AM",
-      "body": "Meet in KMC 2-70. The morning block runs 9:00 AM–12:00 PM with breaks at 10:05 and 11:00. The afternoon block runs 2:00–5:00 PM and includes a one-hour pair field mission, so bring water and wear comfortable shoes.",
-      "date": "Jul 21"
     }
   ],
   "sessions": [
     {
       "id": "session-1",
       "number": 1,
-      "title": "Day 1 AM · AI, the Airline Case, and Your Course Agent",
-      "subtitle": "Course introduction, AI foundations, system accountability, agents, source control, LLM context, and a bounded public fork",
+      "title": "Day 1 AM · AI, the Airline Case, and the Model Market",
+      "subtitle": "Course introduction, AI foundations, system accountability, and reading the model market on the OpenRouter web interface",
       "date": "Tue · Jul 28",
       "time": "9:00 AM–12:00 PM",
       "location": "KMC 2-70",
@@ -126,19 +89,20 @@
       "visibleToStudents": true,
       "activities": [
         "Course and room introductions",
-        "The Broken Oracle cooperative card run",
-        "Live AI-boundary polls",
-        "Git and GitHub basics",
-        "Create and verify a bounded course agent"
+        "Icerynk sign-in and system check",
+        "The Turing Desk · live support-desk run",
+        "Live case-debrief polls",
+        "Reading model cards and filters on openrouter.ai",
+        "Free OpenRouter account over lunch"
       ],
       "deck": "slides/session-1/morning.md",
       "gameScenario": {
         "id": "broken-oracle",
-        "eyebrow": "Case file 01 · System accountability",
-        "title": "The Fare Oracle promise",
-        "summary": "Jordan Lee needs to make a time-sensitive trip after a family loss. Meridian Air’s official assistant says Jordan can buy standard tickets now and request a reduced fare after travel. Jordan relies on that answer.",
+        "eyebrow": "Case file 01 · Fare Oracle is still live",
+        "title": "What happens tomorrow morning?",
+        "summary": "Jordan Lee needs to travel after a family loss. Meridian Air’s official assistant says Jordan can buy now and request the reduced fare later. Jordan trusts it—and loses money.",
         "disclaimer": "Dramatized classroom simulation inspired by a public tribunal decision. Meridian Air, Jordan Lee, the depicted interface, routes, dates, and amounts are fictional. Treat the family-loss context with care; this is not legal or travel advice.",
-        "learningObjective": "Locate a plausible failure, state a testable system hypothesis, change one component, and define the evidence needed for the next operating decision.",
+        "learningObjective": "Decide what Meridian should do tomorrow, then explain the decision using the evidence you actually have.",
         "labels": {
           "organization": "Meridian Air",
           "traveler": "Jordan Lee",
@@ -162,72 +126,72 @@
           {
             "id": "urgent-journey",
             "stage": "story",
-            "eyebrow": "01 / The urgent journey",
-            "title": "A decision under time pressure",
-            "body": "Jordan must travel after a family loss. The fare rules are unfamiliar, the clock is moving, and the airline’s own assistant appears to be the fastest authoritative source.",
+            "eyebrow": "01 / Jordan has to book today",
+            "title": "The clock is running",
+            "body": "Jordan must travel after a family loss. The fare rules are unfamiliar, time is short, and the airline’s own assistant is right there.",
             "image": "/assets/oracle-deck/storyboard/01-urgent-journey.webp",
             "alt": "Jordan Lee, wearing a rust jacket and holding a mustard suitcase, stands beside a cream retro information terminal in an airport.",
-            "caption": "The user, the decision, and the consequence come before the technology."
+            "caption": "Before there is an AI problem, there is a person trying to make a decision."
           },
           {
             "id": "oracle-answers",
             "stage": "story",
-            "eyebrow": "02 / The promise",
-            "title": "The official interface gives a clear answer",
-            "body": "Fare Oracle says Jordan can buy standard tickets now, travel, and submit the reduced-fare request afterward. A linked policy record quietly says completed travel is not eligible.",
+            "eyebrow": "02 / Buy now; we’ll fix it later",
+            "title": "Fare Oracle sounds certain",
+            "body": "Fare Oracle says Jordan can buy standard tickets now, travel, and request the reduced fare afterward. The answer is specific, actionable, and wearing the airline’s logo.",
             "image": "/assets/oracle-deck/storyboard/02-oracle-answers.webp",
             "alt": "Jordan studies a retro terminal showing a simple ticket-and-return pathway while a nearby policy binder displays a contradictory blocked-return symbol.",
-            "caption": "A confident interface can make contradictory evidence easy to miss."
+            "caption": "Would you trust it?"
           },
           {
             "id": "irreversible-click",
             "stage": "story",
-            "eyebrow": "03 / The action",
-            "title": "The answer becomes a business decision",
-            "body": "Jordan buys an outbound and return ticket. The system output is no longer just language: it has shaped a consequential customer action and created measurable financial exposure.",
+            "eyebrow": "03 / One answer, two tickets",
+            "title": "Jordan commits",
+            "body": "Jordan trusts the answer and buys an outbound and return ticket. The chatbot’s words have now changed a real purchase.",
             "image": "/assets/oracle-deck/storyboard/03-irreversible-click.webp",
             "alt": "Jordan presses an illuminated control on the terminal while holding a payment card as two tickets emerge beneath a large airport clock.",
-            "caption": "The moment of reliance turns output quality into operating risk."
+            "caption": "The answer now has a price tag."
           },
           {
             "id": "door-closes",
             "stage": "story",
-            "eyebrow": "04 / The contradiction",
-            "title": "Customer care applies the opposite rule",
-            "body": "After travel, customer care rejects the request under the published policy. Jordan now has two incompatible representations from one organization: the assistant’s promise and the policy team’s rule.",
+            "eyebrow": "04 / Then Meridian says no",
+            "title": "The airline gives the opposite answer",
+            "body": "After travel, customer care rejects the request. The published policy says the reduced fare had to be approved before the trip. The same airline has told the same customer two different things.",
             "image": "/assets/oracle-deck/storyboard/04-door-closes.webp",
             "alt": "Jordan presents tickets and a captured terminal response at a service counter while an employee points to a policy binder behind a coral barrier.",
-            "caption": "The evidence trail includes the interface response, policy record, tickets, request, and correspondence."
+            "caption": "Now the team has a fact pattern—not yet a technical diagnosis."
           },
           {
             "id": "system-map",
             "stage": "system",
-            "eyebrow": "05 / The system",
-            "title": "The terminal is one component",
-            "body": "The disputed claim could have entered or escaped at the policy source, content pipeline, assistant, interface, validation step, purchase workflow, refund workflow, or human escalation boundary. The public record does not identify the technical root cause.",
+            "eyebrow": "05 / Follow the answer",
+            "title": "The chatbot did not act alone",
+            "body": "A policy team, policy page, assistant, website, purchase flow, customer-service process, and human decisions all sit behind this answer. We know they conflicted. We do not yet know exactly why.",
             "image": "/assets/oracle-deck/storyboard/05-system-map.webp",
             "alt": "Jordan and the Fare Oracle connect through colored paths to a policy binder, source archive, processing machinery, refund conveyor, service desk, and review gate; several possible failure points are lit.",
-            "caption": "A testable diagnosis names a layer and the evidence that would distinguish it from the alternatives."
+            "caption": "A useful failure hypothesis says where to look and what evidence could prove it wrong."
           },
           {
             "id": "accountability",
             "stage": "accountability",
             "eyebrow": "06 / The real-case finding",
-            "title": "Responsibility stays with the organization",
-            "body": "In the real case, the tribunal found negligent misrepresentation and reasonable reliance. The airline could not avoid responsibility by treating one part of its website as separate from the rest of the business.",
+            "title": "The airline cannot blame the chatbot",
+            "body": "In the real case, the tribunal found that the customer reasonably relied on the answer. The airline could not treat its chatbot as a separate business when the answer came through its own website.",
             "image": "/assets/oracle-deck/storyboard/06-accountability.webp",
             "alt": "A geometric balance holds Jordan and an evidence packet opposite a connected group of policy, product, service, and terminal components, with an adjudicator silhouette behind them.",
-            "caption": "Accountability is part of the architecture, even when the model architecture is unknown."
+            "caption": "The technology may be uncertain. The organization’s responsibility is not."
           },
           {
             "id": "repair-the-oracle",
             "stage": "mission",
-            "eyebrow": "07 / Your operating decision",
-            "title": "Repair the system, not the story",
-            "body": "Your party will locate a plausible failure, commit one controlled repair, test a normal case and a failure case, define a human-review gate, and decide what the current evidence justifies.",
+            "eyebrow": "07 / Meridian opens tomorrow",
+            "title": "What does your team do now?",
+            "body": "Find the promise, work out where the problem might be, change one thing, try the fix on an everyday fare question and a risk-targeted case, then decide what customers encounter tomorrow.",
             "image": "/assets/oracle-deck/storyboard/07-repair-the-oracle.webp",
             "alt": "Five students collaborate around the Fare Oracle and a review table, comparing evidence cards and two test tickets while closing a validation gate.",
-            "caption": "The goal is a defensible next decision, not a perfect score or a convenient villain."
+            "caption": "Your final briefing: what happened, what changed, and is Fare Oracle live tomorrow?"
           }
         ],
         "sourceFacts": [
@@ -254,31 +218,31 @@
         ],
         "generatedDraft": "Purchase a standard fare now. After you travel, submit the reduced-fare request within 90 days and the adjustment can be applied retroactively.",
         "systemFlow": [
-          "Policy owner",
-          "Policy source",
+          "Policy team",
+          "Approved policy",
           "Fare Oracle",
-          "Purchase decision",
-          "Refund workflow",
+          "Jordan’s purchase",
+          "Customer service",
           "Human review"
         ],
         "constraints": [
           "Treat the evidence packet as fixed; do not invent a technical root cause.",
           "Change exactly one system component during the run.",
-          "Test the repair on one representative case and one consequential failure case.",
-          "Name the human owner and the condition that requires review."
+          "Try the change on one everyday fare question and one case designed to expose this risk.",
+          "Say when a person must step in and who owns the result."
         ],
-        "mission": "Determine which representation is supported, locate where the contradiction could have entered or escaped, choose one controlled repair, test it, and establish the operating boundary.",
+        "mission": "You are Meridian Air’s response team. Find what went wrong, change one thing, test it twice, and decide whether Fare Oracle launches, runs with human review, or stays offline.",
         "readinessQuestions": [
-          "What exact claim changed Jordan’s decision?",
-          "Which evidence supports or contradicts that claim?",
-          "Which part of the organization owns the result?"
+          "What exactly did Fare Oracle promise?",
+          "What did Jordan do because of that promise?",
+          "Which Meridian record should have controlled the answer?"
         ]
       },
       "knowledge": [
         {
           "id": "ai-and-generative-ai",
           "title": "AI and generative AI",
-          "before": "Before The Broken Oracle",
+          "before": "Before The Turing Desk",
           "purpose": "Distinguish the broad category of AI from machine learning, deep learning, and systems that generate candidate content.",
           "concepts": [
             "artificial intelligence",
@@ -294,22 +258,22 @@
         {
           "id": "course-operating-model",
           "title": "Course operating model",
-          "before": "Before The Broken Oracle",
+          "before": "Before The Turing Desk",
           "purpose": "Explain the six meetings, the main project, and how the first two assignments prepare students for it.",
           "concepts": [
             "course sequence",
             "projects",
             "build logs",
             "Switch Test",
-            "GenAI for New York"
+            "Con Edison partner capstone"
           ],
-          "readyWhen": "A student can state the main project, the purpose of Project 1, and what they will create before noon.",
+          "readyWhen": "A student can state the main project, the purpose of Project 1, that it is a pair project presented in three minutes at the start of Session 3, and that the only setup needed by lunch is a free OpenRouter account.",
           "materialId": "deck"
         },
         {
           "id": "claim-evidence-system",
           "title": "Claims, evidence, and system layers",
-          "before": "Before The Broken Oracle",
+          "before": "Before The Turing Desk",
           "purpose": "Give students the minimum concepts needed to trace an unsupported claim, locate plausible system failures, and test one controlled repair.",
           "concepts": [
             "candidate output",
@@ -324,47 +288,26 @@
           "materialId": "deck"
         },
         {
-          "id": "chatbot-agent-context",
-          "title": "Chatbot, agent, and context",
-          "before": "Before opening OpenCode",
-          "purpose": "Separate a chat response from an agent loop and explain what information reaches the language model during the current request.",
+          "id": "model-market",
+          "title": "Reading the model market",
+          "before": "Before choosing the two models for Project 1",
+          "purpose": "Read openrouter.ai/models as a market rather than a leaderboard: what a model card actually states, what the filter rail can constrain, what a price per million tokens does and does not tell you, and why one model name can carry several providers and terms.",
           "concepts": [
-            "chatbot",
-            "agent loop",
-            "instructions",
-            "conversation",
-            "context window",
-            "files",
-            "tool results",
-            "weights",
-            "stopping condition"
+            "aggregator",
+            "switching cost",
+            "model card",
+            "context length",
+            "input and output pricing",
+            "price per million tokens",
+            "input modality",
+            "tool calling",
+            "zero data retention",
+            "provider endpoint",
+            "free label",
+            "open weights",
+            "closed model"
           ],
-          "readyWhen": "A student can explain why the model does not automatically know the repository and how an agent can read files or use permitted tools over several steps.",
-          "materialId": "deck"
-        },
-        {
-          "id": "course-agent-repository",
-          "title": "Course agent and public fork",
-          "before": "Before the bounded commit",
-          "purpose": "Connect OpenCode to released course material and use source control to prepare one public, reviewable contribution without changing course files or exposing private information.",
-          "concepts": [
-            "OpenCode",
-            "OpenRouter",
-            "DeepSeek V4 Flash",
-            "AGENTS.md",
-            "source control",
-            "Git",
-            "GitHub",
-            "commit",
-            "branch",
-            "fork",
-            "push",
-            "pull request",
-            "diff",
-            "human approval",
-            "public student work"
-          ],
-          "readyWhen": "A student can explain Git and GitHub, run the course check, create only the allowed public file, inspect the diff, and prepare a draft pull request without exposing a credential or private information.",
+          "readyWhen": "A student can filter the catalogue to a stated business constraint, read input and output price separately off a card, recognize the (free) label and say what free costs instead of money, and name what they still do not know before they would deploy the model.",
           "materialId": "deck"
         }
       ],
@@ -397,54 +340,175 @@
           "path": "sessions/session-1/after-class.md"
         },
         {
-          "id": "session-guide",
-          "label": "Session guide",
-          "description": "Learning goals, schedule, preparation, and Session 1 outputs",
-          "kind": "reference",
+          "id": "project-1",
+          "label": "Project 1",
+          "description": "The Switch Test assignment brief — a pair project comparing models in a web playground, presented in three minutes at the start of Session 3",
+          "kind": "assignment",
           "audience": "shared",
           "studentSection": "resources",
-          "path": "sessions/session-1-student.md"
+          "path": "assignments/project-1/brief.md"
+        }
+      ]
+    },
+    {
+      "id": "session-2",
+      "number": 2,
+      "title": "Day 1 PM · Two Models, One Prompt, One Street",
+      "subtitle": "The OpenRouter chat playground, business-system baselines, and a field-to-testable-idea studio",
+      "date": "Tue · Jul 28",
+      "time": "2:00–5:00 PM",
+      "location": "KMC 2-70",
+      "status": "upcoming",
+      "visibleToStudents": true,
+      "activities": [
+        "Side-by-side model comparison in openrouter.ai/chat",
+        "Write the switch card",
+        "Generative AI in business lecture",
+        "Forty-five-minute pair field mission, including the walk back",
+        "Human idea clinic and instructor feedback",
+        "Pair evidence packet, testable task, and Project 1 handoff"
+      ],
+      "deck": "slides/session-2/afternoon.md",
+      "knowledge": [
+        {
+          "id": "tokens-and-context",
+          "title": "Tokens, prediction, and context",
+          "before": "Before opening the playground",
+          "purpose": "Explain what a language model is doing when it produces an answer, and what is and is not inside the box it is answering from.",
+          "concepts": [
+            "token",
+            "next-token prediction",
+            "probability",
+            "candidate output",
+            "context window",
+            "conversation history",
+            "framing instructions",
+            "non-determinism"
+          ],
+          "readyWhen": "A student can explain why the model knows nothing that is not in the current context, and why the same prompt can return a different answer on a rerun.",
+          "materialId": "deck"
         },
         {
-          "id": "lecture-workbook",
-          "label": "Lecture workbook",
-          "description": "Claim tracing, system diagnosis, evaluation cases, operating cost, and controlled-demo worksheets",
-          "kind": "reference",
-          "audience": "shared",
-          "studentSection": "resources",
-          "path": "materials/session-1/lecture-workbook.md"
+          "id": "side-by-side-comparison",
+          "title": "Side-by-side model comparison",
+          "before": "Before the business block",
+          "purpose": "Run one prompt against two models in the OpenRouter chat playground and read the difference on named dimensions instead of on impression.",
+          "concepts": [
+            "chat playground",
+            "Add Model",
+            "controlled comparison",
+            "format",
+            "length",
+            "invented specifics",
+            "refusal and hedging",
+            "price per million tokens",
+            "open weights",
+            "closed model",
+            "free label",
+            "switch card"
+          ],
+          "readyWhen": "A student can put two models on an identical prompt, say what differs on format, length, invented specifics, refusal, and price, state which one they would ship, and name the falsifiable condition that would make them switch.",
+          "materialId": "deck"
         },
         {
-          "id": "broken-oracle",
-          "label": "Broken Oracle",
-          "description": "Story-first cooperative card roguelike based on a documented business-system accountability case, with one shared hand, ordered branches, one controlled change, required test coverage, computed endings, and an instructor director view",
-          "kind": "game",
-          "audience": "shared",
-          "studentSection": "resources",
-          "path": "activities/session-1/broken-oracle.md"
+          "id": "genai-business-system",
+          "title": "Generative AI in a business system",
+          "before": "Before selecting a field use case",
+          "purpose": "Connect a generative model's candidate output to a workflow, decision, accountable owner, and measurable business outcome.",
+          "concepts": [
+            "task",
+            "candidate output",
+            "workflow",
+            "decision",
+            "business outcome",
+            "baseline",
+            "owner"
+          ],
+          "readyWhen": "A student can trace one proposed use from task through output and workflow to an outcome measured against the current process.",
+          "materialId": "deck"
         },
         {
-          "id": "lab",
-          "label": "Course agent lab",
-          "description": "Connect OpenCode to released material and prepare one bounded draft pull request",
-          "kind": "lab",
-          "audience": "shared",
-          "studentSection": "resources",
-          "path": "labs/session1-build-an-agent/GUIDE.md"
+          "id": "business-evidence-and-control",
+          "title": "Evidence, economics, and operating control",
+          "before": "Before the field mission",
+          "purpose": "Compare output, workflow, and business evidence while accounting for review work, consequence, verifiability, governance, and ownership.",
+          "concepts": [
+            "output evidence",
+            "workflow evidence",
+            "business evidence",
+            "review bottleneck",
+            "consequence",
+            "verifiability",
+            "operating mode",
+            "prototype",
+            "governance"
+          ],
+          "readyWhen": "A student can identify which evidence supports a bounded pilot, where a person must review, and what result would stop or change the use case.",
+          "materialId": "deck"
         },
         {
-          "id": "setup",
-          "label": "OpenCode setup",
-          "description": "Git, OpenCode, OpenRouter, DeepSeek V4 Flash, and repository preflight",
-          "kind": "setup",
+          "id": "field-to-agent",
+          "title": "Field evidence to a testable idea",
+          "before": "Before the field mission",
+          "purpose": "Write four field lines, separate any informal AI trial from the three formal runs, write the smallest testable task and answer key before those runs, and improve it through peer and instructor critique without inventing facts.",
+          "concepts": [
+            "observation",
+            "interpretation",
+            "unknown",
+            "provenance",
+            "consent",
+            "redaction",
+            "de-identification",
+            "task specification",
+            "ordinary case",
+            "can't-tell case",
+            "human review"
+          ],
+          "readyWhen": "A pair can return with a structured evidence packet and draft task, separate observation from interpretation, state a correct-answer rule and non-AI comparison, respond to a human challenge, and name the next test.",
+          "materialId": "deck"
+        }
+      ],
+      "materials": [
+        {
+          "id": "before-class",
+          "label": "Before class",
+          "description": "What to complete before Session 2",
+          "kind": "guide",
+          "audience": "shared",
+          "studentSection": "before",
+          "path": "sessions/session-2/before-class.md"
+        },
+        {
+          "id": "during-class",
+          "label": "In class",
+          "description": "What to do and leave with during Session 2",
+          "kind": "guide",
+          "audience": "shared",
+          "studentSection": "during",
+          "path": "sessions/session-2/during-class.md"
+        },
+        {
+          "id": "after-class",
+          "label": "After class",
+          "description": "Follow-up work and the next deadline after Session 2",
+          "kind": "guide",
+          "audience": "shared",
+          "studentSection": "after",
+          "path": "sessions/session-2/after-class.md"
+        },
+        {
+          "id": "field-assignment",
+          "label": "Field Evidence Sprint",
+          "description": "Forty-five-minute pair mission, testable task, critique, and Project 1 handoff",
+          "kind": "field",
           "audience": "shared",
           "studentSection": "resources",
-          "path": "setup/setup-guide.md"
+          "path": "activities/session-1/field-to-agent.md"
         },
         {
           "id": "project-1",
           "label": "Project 1",
-          "description": "The Switch Test assignment brief",
+          "description": "The Switch Test assignment brief — a pair project comparing models in a web playground, presented in three minutes at the start of Session 3",
           "kind": "assignment",
           "audience": "shared",
           "studentSection": "resources",
@@ -457,10 +521,10 @@
     {
       "id": "assignment-p1",
       "title": "Project 1: The Switch Test",
-      "type": "Individual project",
-      "due": "Fri Jul 31 · before Session 3",
+      "type": "Pair project · 3-minute presentation",
+      "due": "Presented Fri Jul 31 · start of Session 3",
       "status": "open",
-      "summary": "Test a real business task against two models with a ten-item evaluation set.",
+      "summary": "In pairs, find something in the built environment around NYU that a model could help with, then test different models on the same six cases. Use OpenRouter or another playground, include one open-weights and one closed model across a baseline and two one-change evals, preserve every raw output as text, and compare the cost trade-offs. Both partners present for three minutes at the start of Session 3; the supporting evidence is uploaded to Brightspace as one PDF or zip beforehand.",
       "deck": "assignments/project-1/brief.md"
     }
   ]

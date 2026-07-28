@@ -12,8 +12,7 @@
         "deepseek/deepseek-v4-flash": {
           "options": {
             "provider": {
-              "require_parameters": true,
-              "zdr": true
+              "require_parameters": true
             }
           }
         }
@@ -22,11 +21,11 @@
   },
   "agent": {
     "course-agent": {
-      "description": "Course agent restricted to the fork owner's public work folder",
+      "description": "Course agent restricted to the fork owner's approved work folders",
       "mode": "primary",
       "model": "openrouter/deepseek/deepseek-v4-flash",
       "steps": 20,
-      "prompt": "Read AGENTS.md and the current released course material before acting. Cite course answers with repository paths. Edit only the fork owner's student-work folder. Keep the student in control of commits, pushes, and pull requests."
+      "prompt": "Read AGENTS.md and the current released course material before acting. Cite course answers with repository paths. Edit public work only in the fork owner's approved session-work or submissions folder. Use .course-local only for local non-secret context. Keep the student in control of commits, pushes, and pull requests."
     },
     "build": { "disable": true },
     "plan": { "disable": true },
@@ -47,7 +46,6 @@
     "list": "allow",
     "edit": {
       "*": "deny",
-      "student-work/**": "allow",
       ".course-local/**": "allow"
     },
     "bash": {

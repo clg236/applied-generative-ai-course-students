@@ -35,7 +35,7 @@ By the end of the course, you should be able to:
 2. Explain how model training, tokens, context, tools, and system instructions affect an output.
 3. Turn a business need into a bounded task with a clear user, input, output, decision, and review boundary.
 4. Build a useful generative-AI asset, tool, workflow, or prototype without needing to write all of the code yourself.
-5. Evaluate quality, failure, cost, latency, privacy, and risk using evidence from the actual task.
+5. Evaluate quality, failure, cost, latency, privacy, and risk using evidence from the actual task, changing one thing at a time against a fixed set of cases.
 6. Make and defend a practical recommendation, including what remains uncertain and what a person must review.
 
 ## How the course works
@@ -56,10 +56,10 @@ Bring a charged laptop and charger. Some sessions include public-space field wor
 
 | Session | Date and time | Main focus | Applied work and milestone |
 |---:|---|---|---|
-| 1 | Tue Jul 28 · 9:00 AM–12:00 PM | What AI and generative AI are; models, context, agents, and source control | Broken Oracle case; live polls; course-agent setup and verification |
-| 2 | Tue Jul 28 · 2:00–5:00 PM | Generative AI as a business system | Pair field exercise; evidence packet; one bounded use case and test plan |
-| 3 | Fri Jul 31 · 9:00 AM–12:00 PM | Multimodal AI systems | Project 1 due; Con Edison briefs introduced; multimodal field activity; Project 2 introduced |
-| 4 | Tue Aug 4 · 9:00 AM–12:00 PM | Coding agents, specification, and verification | Build and test a small tool or system; Project 2 work |
+| 1 | Tue Jul 28 · 9:00 AM–12:00 PM | What AI and generative AI are; system responsibility; reading the model market | The Turing Desk; the Air Canada case; live polls; a free OpenRouter account |
+| 2 | Tue Jul 28 · 2:00–5:00 PM | Reading a model card; generative AI inside a business system | One prompt through two models; the switch card; a forty-five-minute pair field mission and the evidence packet it produces |
+| 3 | Fri Jul 31 · 9:00 AM–12:00 PM | Open-weights governance; multimodal AI systems | Project 1 pair presentations; open-versus-closed and China-policy reading debate; Con Edison briefs launched; energy-infrastructure observation walk; Project 2 introduced |
+| 4 | Tue Aug 4 · 9:00 AM–12:00 PM | The terminal, Git and GitHub, coding agents, specification and verification | The course agent lab; a deliberate failure and the check that caught it; Project 2 work |
 | 5 | Tue Aug 4 · 2:00–5:00 PM | Model quality, operating cost, and switching | Project 2 due; Con Edison brief clinic; capstone team and problem confirmed |
 | 6 | Tue Aug 11 · 9:00 AM–12:00 PM · Con Edison HQ | Governance, risk, and human judgment | Partner capstone presentations and Q&A |
 
@@ -69,13 +69,15 @@ The final class will be held at **Con Edison headquarters, 4 Irving Place**. Exa
 
 The syllabus defines each assignment's purpose, weight, and major deadline. The current assignment page in Icerynk is the source of truth for its detailed requirements, examples, submission instructions, and approved alternatives.
 
-### Six build logs
+### Three build logs
 
-After each session, submit a short record of what you tried, what surprised you or failed, what you will change, and how you used AI. These are graded for specific and honest reflection, not writing polish.
+One per teaching day, written in the room in the last twenty minutes: what you tried, what surprised you or failed, what you will change, and how you used AI. These are graded for specific and honest reflection, not writing polish.
 
-### Project 1 · Individual model comparison
+### Project 1 · The Switch Test
 
-Define one bounded business task, test at least two model-backed versions under comparable conditions, revise from the evidence, and make a recommendation. The [Project 1 brief](../assignments/project-1/brief.md) contains the current evaluation and submission requirements.
+**In pairs.** Explore the built environment around NYU and find one opportunity to make New York a better place to live and work. Try the current task yourselves and, if useful, probe the idea with AI while you explore. Those probes are labelled exploratory. The scored comparison begins after you write the task and answer key: six fixed cases, a baseline, one cheaper-or-faster version, and one better version, across at least one open-weights and one closed model. The decision may be that the non-AI alternative is better.
+
+**You present it as a pair in three minutes at the start of Session 3**, with the supporting evidence uploaded to Brightspace beforehand. The [Project 1 brief](../assignments/project-1/brief.md) contains the current evaluation and presentation requirements.
 
 ### Project 2 · Individual applied build
 
@@ -91,8 +93,8 @@ You may propose a different format when it demonstrates the same learning goals.
 
 | Component | Weight |
 |---|---:|
-| Participation and six build logs | 15% |
-| Project 1 · Individual model comparison | 20% |
+| Participation and three build logs | 15% |
+| Project 1 · The Switch Test (pairs) | 20% |
 | Project 2 · Individual applied build | 25% |
 | Team capstone | 40% |
 
@@ -120,7 +122,7 @@ Contact the instructor as early as possible if you cannot attend. Absences cover
 
 AI use is expected unless an assignment says otherwise. You remain responsible for the accuracy, sources, permissions, decisions, and final work. With each submission, briefly identify the tools or models used, what they contributed, and where your judgment changed or rejected the output.
 
-Project 1 and Project 2 are individual assignments. Class activities may use pairs or groups, and the capstone is team work. Credit every source and collaborator. Do not fabricate evidence, present another person's work as your own, or use AI disclosure as a substitute for attribution.
+Project 1 is done in pairs and presented by both partners; Project 2 is individual; the capstone is team work. Both partners are responsible for everything a pair hands in and says. Credit every source and collaborator. Do not fabricate evidence, present another person's work as your own, or use AI disclosure as a substitute for attribution.
 
 Follow the [NYU Academic Integrity Policy](https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html) and the [NYU Stern Code of Conduct](https://www.stern.nyu.edu/portal-partners/student-engagement/student-life/life-stern/code-conduct).
 
@@ -128,7 +130,9 @@ Follow the [NYU Academic Integrity Policy](https://www.nyu.edu/about/policies-gu
 
 Use public, synthetic, consented, de-identified, or explicitly authorized data. Do not put API keys, grades, roster data, NYU IDs, accommodations, private feedback, personal messages, confidential records, proprietary material, or identifiable recordings into public Git repositories or third-party AI tools.
 
-Anything pushed to the public student repository is public. Work only inside your assigned path, inspect the complete diff, and approve commits and pull requests yourself. Use Brightspace or another instructor-approved private channel for work that cannot be public.
+**Field work and images.** Several activities, and Project 1, send you out to document things in public space. Photograph the sign, the notice, the infrastructure — not people. No faces, licence plates, names, apartment numbers, or anything identifying a household, and nothing internal to NYU. Public-facing information only: signage, published schedules, public infrastructure. Where the content is text, type it out rather than photographing it; typing forces you to notice what you are about to send to a model provider. If a problem cannot be studied inside that boundary, choose a different problem and say so — losing an idea to a boundary is a finding, and it is credited as one.
+
+**Repositories.** From Project 2 onward, work is submitted through a public student repository; week 1 runs entirely in a browser and Project 1 is presented in class with its evidence uploaded to Brightspace. Once you are working in the repository, anything pushed to it is public. Work only inside your assigned path, inspect the complete diff, and approve commits and pull requests yourself. Use Brightspace or another instructor-approved private channel for work that cannot be public.
 
 ## NYU and Stern policies and support
 

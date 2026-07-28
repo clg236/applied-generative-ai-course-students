@@ -1,5 +1,7 @@
 # Student work
 
+This folder is used from **Session 4 (Tue Aug 4)** onward, once the fork, clone, branch, and pull-request workflow has been taught. **Project 1 does not belong here** — it is presented in class, with its evidence uploaded to Brightspace as one PDF or one zip.
+
 Student pull requests use a GitHub-login namespace:
 
 ```text

@@ -4,7 +4,8 @@ import { forkOwnerLogin } from "./student-work-policy.mjs";
 const login = forkOwnerLogin();
 const exactEditPermission = {
   "*": "deny",
-  [`student-work/${login}/**`]: "allow",
+  [`student-work/${login}/session-work/**`]: "allow",
+  [`student-work/${login}/submissions/**`]: "allow",
   ".course-local/**": "allow",
 };
 
@@ -31,7 +32,8 @@ const forwardedArguments = process.argv.slice(2);
 const checkOnly = forwardedArguments.length === 1 && forwardedArguments[0] === "--check-only";
 
 console.log(`Starting the course agent for ${login}.`);
-console.log(`Writable public path: student-work/${login}/**`);
+console.log(`Writable public path: student-work/${login}/session-work/**`);
+console.log(`Writable submission path: student-work/${login}/submissions/**`);
 console.log("Local-only path: .course-local/**");
 
 if (checkOnly) {

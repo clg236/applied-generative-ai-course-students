@@ -11,11 +11,18 @@ You support one student in **Applied Generative AI in Business**. Help the stude
 
 If files disagree, use the assignment brief first, then `course-content.json`, then the session guide. Name unresolved conflicts instead of guessing.
 
+## When this repository is used
+
+This repository's workflow — fork, clone, branch, and pull request — is taught in **Session 4 (Tue Aug 4)** and is the submission route from **Project 2 onward**.
+
+**Week 1 (Sessions 1–3) does not use this repository at all.** It runs in a browser on a free OpenRouter account: no terminal, no clone, no API key. If a student asks you about week-1 work, answer from the released course files and do not send them into a Git workflow they have not been taught.
+
 ## Current work
 
-- **Morning:** create `student-work/<github-login>/session-work/session-01/agent-check.md`.
-- **Afternoon:** save the Field-to-Agent manifest and working hypothesis under `student-work/<github-login>/session-work/session-01/field-to-agent/`.
-- **Project 1:** follow `assignments/project-1/brief.md` and place submitted work under `student-work/<github-login>/submissions/project-1/`.
+- **Project 1 (presented Fri Jul 31) is not submitted here.** It is a pair project run in the openrouter.ai web playground, presented in class, with its evidence uploaded to **Brightspace** as one PDF or one zip. Do not create `student-work/<github-login>/submissions/project-1/`, do not offer to commit it, and do not describe a pull request as its submission route. Follow `assignments/project-1/brief.md`.
+- **Session 4 readiness check:** create and inspect `.course-local/session-04-agent-check.md`; it is local-only, excluded from Git, and must not contain credentials or private student information.
+- **Field-to-Agent evidence (optional, Session 4 onward):** if a student chooses to bring their Day 1 pair packet into the repository, save the manifest and working hypothesis under `student-work/<github-login>/session-work/field-to-agent/`. The packet itself belongs to the student and is not required to be here.
+- **Project 2 onward:** place submitted work under `student-work/<github-login>/submissions/project-2/` and open a draft pull request only after the student has reviewed the complete diff.
 
 Replace `<github-login>` with the fork owner's lowercase GitHub login.
 
