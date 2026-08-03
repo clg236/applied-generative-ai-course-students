@@ -1,0 +1,56 @@
+name: Auto-merge sim pull requests
+
+# Session 4's submission route: a student's agent opens a pull request that
+# adds one folder under sims/. When every changed file stays inside a single
+# sims/<folder>/ path, the class does not need a human in the loop and the
+# pull request merges itself. Anything wider waits for the instructor — and
+# the single-folder rule is what keeps one student's agent from editing
+# another student's sim on the way through.
+#
+# pull_request_target, and deliberately NO checkout: the job reads the pull
+# request's file list through the API and merges. Untrusted code from the
+# pull request never runs here.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    steps:
+      - name: Merge when the diff stays inside one sims/ folder
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          files=$(gh api "repos/$REPO/pulls/$PR/files" --paginate --jq '.[].filename')
+          if [ -z "$files" ]; then
+            echo "Empty pull request; leaving it alone."
+            exit 0
+          fi
+
+          # Every file must be sims/<folder>/<something...> — sims/README.md
+          # and anything outside sims/ stays human-reviewed.
+          outside=$(printf '%s\n' "$files" | awk -F/ '$1 != "sims" || NF < 3')
+          if [ -n "$outside" ]; then
+            echo "Changes outside sims/<folder>/ — waiting for the instructor:"
+            printf '  %s\n' $outside
+            exit 0
+          fi
+
+          folders=$(printf '%s\n' "$files" | awk -F/ '{ print $2 }' | sort -u)
+          count=$(printf '%s\n' "$folders" | grep -c .)
+          if [ "$count" -ne 1 ]; then
+            echo "Touches $count sim folders — one sim per pull request. Waiting for the instructor."
+            exit 0
+          fi
+
+          echo "All changes inside sims/$folders/ — merging."
+          gh pr merge "$PR" --repo "$REPO" --squash
