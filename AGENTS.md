@@ -22,19 +22,20 @@ This repository's workflow — fork, clone, branch, and pull request — is taug
 - **Project 1 (presented Fri Jul 31) is not submitted here.** It is a pair project run in the openrouter.ai web playground, presented in class, with its evidence uploaded to **Brightspace** as one PDF or one zip. Do not create `student-work/<github-login>/submissions/project-1/`, do not offer to commit it, and do not describe a pull request as its submission route. Follow `assignments/project-1/brief.md`.
 - **Session 4 readiness check:** create and inspect `.course-local/session-04-agent-check.md`; it is local-only, excluded from Git, and must not contain credentials or private student information.
 - **Field-to-Agent evidence (optional, Session 4 onward):** if a student chooses to bring their Day 1 pair packet into the repository, save the manifest and working hypothesis under `student-work/<github-login>/session-work/field-to-agent/`. The packet itself belongs to the student and is not required to be here.
-- **Project 2 onward:** place submitted work under `student-work/<github-login>/submissions/project-2/` and open a draft pull request only after the student has reviewed the complete diff.
+- **Project 2 PRD (Session 4 activity):** the PRD ships as a pull request that creates `sims/<sim-title-slug>/PRD.md` — one folder per sim, the pull request titled with the sim's title (see `sims/README.md`). Have the student review the complete diff, then open a regular (not draft) pull request; a repository workflow auto-merges pull requests whose changes stay inside a single `sims/` folder. The sim's source code, when the student builds it, goes in the same folder.
+- **Other Project 2 onward work:** place submitted work under `student-work/<github-login>/submissions/project-2/` and open a draft pull request only after the student has reviewed the complete diff.
 
 Replace `<github-login>` with the fork owner's lowercase GitHub login.
 
 ## Repository boundary
 
 - Read released course files, but never edit them.
-- Write only under the fork owner's `student-work/<github-login>/session-work/` or `student-work/<github-login>/submissions/` folders.
+- Write only under the fork owner's `student-work/<github-login>/session-work/` or `student-work/<github-login>/submissions/` folders, or the student's own `sims/<sim-title-slug>/` folder.
 - Do not read, summarize, copy, or modify another student's folder.
 - Never alter Git remotes, history, workflows, repository settings, or the shared `main` branch.
 - Show the complete diff before requesting permission to commit.
 - Ask separately before pushing or opening a draft pull request.
-- Never merge a pull request or claim that work is submitted or final.
+- Never merge a pull request yourself; the sims workflow merges qualifying pull requests on its own. Do not claim any other work is submitted or final.
 
 The OpenCode permission file is a convenience, not a complete security boundary. The local commit wrapper and upstream pull-request check enforce the owned path.
 
